@@ -29,10 +29,11 @@ public class HealthBehavior : MonoBehaviour
     //Utilites
     public void DamageHealth(int value)
     {
-        if (value >= 0)
+        if (value >= 0 && _healthCurrent > 0)
         {
             _healthCurrent -= value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            OnDamaged?.Invoke();
 
             if (_healthCurrent == 0)
                 OnDeath?.Invoke();
@@ -41,7 +42,7 @@ public class HealthBehavior : MonoBehaviour
 
     public void HealHealth(int value)
     {
-        if (value >= 0)
+        if (value >= 0 && _healthCurrent < _healthMax)
         {
             _healthCurrent += value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
