@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class HealthDisplayController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Declarations
+    [Header("Display Settings")]
+    [SerializeField] private HealthBehavior _healthReference;
+    [Tooltip("The first index of this collection is considered to be the FIRST heart of the health display")]
+    [SerializeField] private List<GameObject> _healthUnits;
+
+
+    //Monobehaviors
+    private void Awake()
     {
-        
+        _healthReference = GetComponent<HealthBehavior>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    //Utilites
+    private void EmptyHearts()
     {
-        
+        foreach (GameObject heart in _healthUnits)
+            heart.SetActive(false);
     }
+
+    private void FillToAmount(int value)
+    {
+        if (value >= 0)
+        {
+            EmptyHearts();
+
+            if (value == 0)
+                return;
+
+            else if (value >= _healthUnits.Count)
+            {
+                foreach (GameObject heart in _healthUnits)
+                    heart.SetActive(true);
+            }
+            else
+            {
+                int count = 0;
+                while (count < value)
+                {
+                    _healthUnits[count].SetActive(true);
+                    count++;
+                }
+            }
+        }
+    }
+
+    public void UpdateHealthDisplay()
+    {
+        FillToAmount(_healthReference.GetCurrentHealth());
+    }
+
 }
