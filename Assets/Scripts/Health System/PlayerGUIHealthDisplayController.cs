@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthDisplayController : MonoBehaviour
+public class PlayerGUIHealthDisplayController : MonoBehaviour
 {
     //Declarations
     [Header("Display Settings")]
@@ -14,9 +14,9 @@ public class HealthDisplayController : MonoBehaviour
     //Monobehaviors
     private void Awake()
     {
-        _healthReference = GetComponent<HealthBehavior>();
+        if (_healthReference == null)
+            _healthReference = GetComponent<HealthBehavior>();
     }
-
 
     //Utilites
     private void EmptyHearts()
