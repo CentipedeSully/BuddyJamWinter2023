@@ -33,7 +33,17 @@ public class PlayerController : MonoBehaviour
     {
         if (_isControlsEnabled)
             _moveObjectReference.SetMoveDirection(_moveInput);
+        else
+            _moveObjectReference.SetMoveDirection(Vector2.zero);
     }
 
+    public void DisableControls()
+    {
+        _isControlsEnabled = false;
+    }
 
+    public void EnableControls()
+    {
+        _isControlsEnabled = true;
+    }
 }

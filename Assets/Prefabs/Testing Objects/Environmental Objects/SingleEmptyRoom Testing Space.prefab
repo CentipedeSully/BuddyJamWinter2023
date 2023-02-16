@@ -620,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 801673701695440659}
   m_Layer: 0
-  m_Name: Testing Game Space
+  m_Name: SingleEmptyRoom Testing Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
