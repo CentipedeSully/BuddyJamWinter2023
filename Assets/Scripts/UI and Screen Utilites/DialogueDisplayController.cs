@@ -11,8 +11,8 @@ public class DialogueDisplayController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentDialogueText;
     [SerializeField] private bool _isDialogueInProgress = false;
 
-    [SerializeField] private List<string> _nonCancelableDialogue;
-    [SerializeField] private List<string> _cancelableDialogue;
+    //[SerializeField] private List<string> _nonCancelableDialogue;
+    //[SerializeField] private List<string> _cancelableDialogue;
 
     [Header("Events")]
     public UnityEvent OnDialogueStarted;
@@ -20,10 +20,7 @@ public class DialogueDisplayController : MonoBehaviour
     public UnityEvent OnDialogueEnded;
 
     //Monobehaviors
-    private void Update()
-    {
-        DialogueTester();
-    }
+
 
 
     //Utilities
@@ -45,6 +42,7 @@ public class DialogueDisplayController : MonoBehaviour
     private IEnumerator ControlDialogue(List<string> dialogueList, bool isDialogueCancelable = true)
     {
         OnDialogueStarted?.Invoke();
+        PlayerObjectManager.Instance.DisablePlayerControls();
         ShowDialoguer();
 
         foreach (string textItem in dialogueList)
@@ -71,6 +69,7 @@ public class DialogueDisplayController : MonoBehaviour
         ResetDialogue();
 
         OnDialogueEnded?.Invoke();
+        PlayerObjectManager.Instance.EnablePlayerControls();
     }
 
     private void ResetDialogue()
@@ -88,15 +87,15 @@ public class DialogueDisplayController : MonoBehaviour
         }
     }
 
-    public void DialogueTester()
-    {
-        //Enter a cancelable dialgoue sequence
-        if (Input.GetKeyDown(KeyCode.Q))
-            EnterDialogue( _cancelableDialogue, true);
+    //public void DialogueTester()
+    //{
+    //    //Enter a cancelable dialgoue sequence
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //        EnterDialogue( _cancelableDialogue, true);
 
-        //Enter a non-cancelable dialgoue sequence
-        if (Input.GetKeyDown(KeyCode.E))
-            EnterDialogue(_nonCancelableDialogue, false);
-    }
+    //    //Enter a non-cancelable dialgoue sequence
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //        EnterDialogue(_nonCancelableDialogue, false);
+    //}
 
 }

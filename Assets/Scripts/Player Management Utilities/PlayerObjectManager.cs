@@ -29,12 +29,14 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
 
     public void DisablePlayerControls()
     {
-        _playerControllerRef.DisableControls();
+        if (_playerControllerRef != null)
+            _playerControllerRef.DisableControls();
     }
 
     public void EnablePlayerControls()
     {
-        _playerControllerRef.EnableControls();
+        if (_playerControllerRef != null)
+            _playerControllerRef.EnableControls();
     }
 
 
