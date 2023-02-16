@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetLocation: {fileID: 0}
-  _transitionDuration: 2
+  _newCameraFollowTransform: {fileID: 0}
+  _followPlayerOnTransition: 0
+  _transitionDuration: 1
   _validObjectTag: Player
   _isLocked: 0
   OnTransitionStarted:

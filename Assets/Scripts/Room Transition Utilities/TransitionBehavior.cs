@@ -33,6 +33,8 @@ public class TransitionBehavior : MonoBehaviour
     private IEnumerator TransitionObject(GameObject triggeringObject)
     {
         OnTransitionStarted?.Invoke();
+        PlayerObjectManager.Instance.DisablePlayerControls();
+        UiManager.Instance.GetScreenFadeController().FadeToBlack((_transitionDuration / 2) - .05f);
         yield return new WaitForSeconds(_transitionDuration / 2);
 
         triggeringObject.transform.position = _targetLocation.transform.position;
@@ -40,7 +42,11 @@ public class TransitionBehavior : MonoBehaviour
             VirtualCameraHandler.Instance.SetNewFollowTarget(_newCameraFollowTransform);
         else VirtualCameraHandler.Instance.SetNewFollowTarget(triggeringObject.transform);
 
+
         yield return new WaitForSeconds(_transitionDuration / 2);
+        UiManager.Instance.GetScreenFadeController().FadeToTransparent((_transitionDuration / 2) - .05f);
+        yield return new WaitForSeconds(.5f);
+        PlayerObjectManager.Instance.EnablePlayerControls();
         OnTransitionEnded?.Invoke();
     }
 }
