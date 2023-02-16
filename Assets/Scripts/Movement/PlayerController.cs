@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     //Declarations
     [SerializeField] private bool _isControlsEnabled = true;
     [SerializeField] private Vector2 _moveInput;
+    [SerializeField] private bool _interactionInput = false;
+    [SerializeField] private bool _attackInput = false;
     private MoveObject _moveObjectReference;
 
 
@@ -19,6 +21,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ReadMoveInput();
+        ReadAttackInput();
+        ReadInteractionInput();
+
         MovePlayerBasedOnInput();
     }
 
@@ -29,6 +34,17 @@ public class PlayerController : MonoBehaviour
         _moveInput.x = Input.GetAxis("Horizontal");
         _moveInput.y = Input.GetAxis("Vertical");
     }
+
+    private void ReadAttackInput()
+    {
+        _attackInput = Input.GetKeyDown(KeyCode.Space);
+    }
+
+    private void ReadInteractionInput()
+    {
+        _interactionInput = Input.GetKeyDown(KeyCode.Return);
+    }
+
     private void MovePlayerBasedOnInput()
     {
         if (_isControlsEnabled)
