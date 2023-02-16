@@ -8,6 +8,8 @@ public class TransitionBehavior : MonoBehaviour
     //Declarations
     [Header("Transition Settings")]
     [SerializeField] private Transform _targetLocation;
+    [SerializeField] private Transform _newCameraFollowTransform;
+    [SerializeField] private bool _followPlayerOnTransition = false;
     [SerializeField] private float _transitionDuration = 2;
     [SerializeField] private string _validObjectTag = "Player";
     [SerializeField] private bool _isLocked = false;
@@ -34,6 +36,9 @@ public class TransitionBehavior : MonoBehaviour
         yield return new WaitForSeconds(_transitionDuration / 2);
 
         triggeringObject.transform.position = _targetLocation.transform.position;
+        if (_followPlayerOnTransition == false && _newCameraFollowTransform != null)
+            VirtualCameraHandler.Instance.SetNewFollowTarget(_newCameraFollowTransform);
+        else VirtualCameraHandler.Instance.SetNewFollowTarget(triggeringObject.transform);
 
         yield return new WaitForSeconds(_transitionDuration / 2);
         OnTransitionEnded?.Invoke();
