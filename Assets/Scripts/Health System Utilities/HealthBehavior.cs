@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthBehavior : MonoBehaviour
+public class HealthBehavior : MonoBehaviour, IDamagable
 {
     //Declarations
     [Header("Health Settings")]
     [SerializeField] private bool _isHealthFullOnStart = true;
     [SerializeField] private int _healthMax = 3;
     [SerializeField] private int _healthCurrent = 3;
-
+    [SerializeField] private float _invulnerabilityDuration = .5f;
+    [SerializeField] private bool _isInvulnerable = false;
+ 
     [Header("Events")]
     public UnityEvent OnDamaged;
     public UnityEvent OnHealed;
@@ -26,10 +28,16 @@ public class HealthBehavior : MonoBehaviour
     }
 
 
+    //Interface
+    public void TakeDamage(int value)
+    {
+        DamageHealth(value);
+    }
+
     //Utilites
     public void DamageHealth(int value)
     {
-        if (value >= 0 && _healthCurrent > 0)
+        if (value >= 0 && _healthCurrent > 0 && !_isInvulnerable)
         {
             _healthCurrent -= value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
@@ -37,6 +45,11 @@ public class HealthBehavior : MonoBehaviour
 
             if (_healthCurrent == 0)
                 OnDeath?.Invoke();
+            else
+            {
+                _isInvulnerable = true;
+                Invoke("EndInvulnerability", _invulnerabilityDuration);
+            }
         }
     }
 
@@ -50,6 +63,10 @@ public class HealthBehavior : MonoBehaviour
         }
     }
 
+    private void EndInvulnerability()
+    {
+        _isInvulnerable = false;
+    }
 
     //Getters and Setters
     public void SetCurrentHealth(int value)
@@ -78,6 +95,27 @@ public class HealthBehavior : MonoBehaviour
     public int GetMaxHealth()
     {
         return _healthMax;
+    }
+
+    public bool IsInvunlerable()
+    {
+        return _isInvulnerable;
+    }
+
+    public void SetInvulnerability(bool value)
+    {
+        _isInvulnerable = value;
+    }
+
+    public void SetInvulerabilityDuration(float value)
+    {
+        if (value >= 0)
+            _invulnerabilityDuration = value;
+    }
+
+    public float GetInvulnerabilityDuration()
+    {
+        return _invulnerabilityDuration;
     }
 
     //Logs
