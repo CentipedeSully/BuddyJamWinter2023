@@ -7,12 +7,16 @@ using UnityEngine.Events;
 public class NPCDialogue : MonoBehaviour, IInteractable
 {
     //Declarations
-    [SerializeField] private bool _isDialogueInteractable = false;
+    [SerializeField] private bool _isDialogueInteractable = true;
     [SerializeField] private bool _isDialogueSkippable = true;
-    [SerializeField] private List<string> dialogueList;
+    [SerializeField] private bool _isAllDialogueExhausted = false;
+    [SerializeField] private int _currentDialogueIndex = 0;
+    [Space(20)]
+    [SerializeField] private List<ListWrapper> dialogues;
 
+    //Events
     [Header("Events")]
-    public UnityEvent OnNpcDialogueTriggered;
+    public UnityEvent OnAllDialogueExhausted;
 
 
     //monobehaviors
@@ -31,8 +35,15 @@ public class NPCDialogue : MonoBehaviour, IInteractable
     {
         if (_isDialogueInteractable)
         {
-            OnNpcDialogueTriggered?.Invoke();
-            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(dialogueList, _isDialogueSkippable);
+            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(dialogues[_currentDialogueIndex].list, _isDialogueSkippable);
+
+            if (_currentDialogueIndex < dialogues.Count - 1)
+                _currentDialogueIndex++;
+            else if (_isAllDialogueExhausted == false)
+            {
+                _isAllDialogueExhausted = true;
+                OnAllDialogueExhausted?.Invoke();
+            }
         }
     }
 
@@ -52,6 +63,20 @@ public class NPCDialogue : MonoBehaviour, IInteractable
         return _isDialogueInteractable;
     }
 
+    public int GetCurrentDialogueIndex()
+    {
+        return _currentDialogueIndex;
+    }
 
 
+    public void LogEventTrigger()
+    {
+        Debug.Log("All Dialogue Exhausted!");
+    }
+}
+
+[System.Serializable]
+public class ListWrapper
+{
+    public List<string> list;
 }

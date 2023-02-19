@@ -741,13 +741,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isDialogueInteractable: 1
-  _isDialogueSkippable: 1
-  dialogueList:
-  - Wassup Homie!
-  - Heard you were tryna take down that nightmare beyond this room!
-  - If you're for real about it, then I have only one thing to say.
-  - Good Luck! Kekeke!
-  OnNpcDialogueTriggered:
+  _isDialogueSkippable: 0
+  _isAllDialogueExhausted: 0
+  _currentDialogueIndex: 0
+  dialogues:
+  - list:
+    - 'Eh? '
+    - Whadda want, Kid?
+  - list:
+    - You're trying to get past that Nightmare, ain't ya?
+    - Well, I have news for you.
+    - It ain't gonna happen!
+  - list:
+    - Persistent, ain't ya?
+    - Well, if you're serious about it, I guess I'll give ya a little tip...
+    - Don't get caught in the dark! Kekekeke!
+  OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2722228248984879592
