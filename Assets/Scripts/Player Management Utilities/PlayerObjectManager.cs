@@ -10,6 +10,8 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     [SerializeField] private GameObject _currentPlayerObject;
     [SerializeField] private Transform _currentPlayerSpawnPoint;
     [SerializeField] private PlayerController _playerControllerRef;
+    [SerializeField] private Transform _cameraFollowTransformOnRespawn;
+    [SerializeField] private bool _isPlayerFollowObjectOnSpawn = false;
 
 
     //Monobehaviors
@@ -19,10 +21,14 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     //Utilities
     public void SpawnPlayer()
     {
-        if (_currentPlayerObject == null)
+        if (IsPlayerAlive() == false)
         {
             _currentPlayerObject = Instantiate(_playerPrefab, _currentPlayerSpawnPoint.position, Quaternion.identity, gameObject.transform);
             _playerControllerRef = _currentPlayerObject.GetComponent<PlayerController>();
+
+            if (_isPlayerFollowObjectOnSpawn || _cameraFollowTransformOnRespawn == null)
+                VirtualCameraHandler.Instance.SetNewFollowTarget(_currentPlayerObject.transform);
+            else VirtualCameraHandler.Instance.SetNewFollowTarget(_cameraFollowTransformOnRespawn);
         }
             
     }
@@ -62,5 +68,22 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             _currentPlayerSpawnPoint = newSpawnPoint;
     }
 
+    public void SetIsPlayerFollowObjectAfterSpawn(bool value)
+    {
+        _isPlayerFollowObjectOnSpawn = value;
+    }
+
+    public void SetFollowObjectAfterSpawn(Transform newTransform)
+    {
+        _cameraFollowTransformOnRespawn = newTransform;
+    }
+
+
+    //Test Utils
+    private void SpawnPlayerOnCommand()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            SpawnPlayer();
+    }
 
 }
