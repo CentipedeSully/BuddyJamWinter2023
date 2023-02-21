@@ -15,7 +15,10 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
 
 
     //Monobehaviors
-
+    private void Update()
+    {
+        SpawnPlayerOnCommand();
+    }
 
 
     //Utilities
@@ -29,6 +32,9 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             if (_isPlayerFollowObjectOnSpawn || _cameraFollowTransformOnRespawn == null)
                 VirtualCameraHandler.Instance.SetNewFollowTarget(_currentPlayerObject.transform);
             else VirtualCameraHandler.Instance.SetNewFollowTarget(_cameraFollowTransformOnRespawn);
+
+            GetComponent<PlayerGUIHealthDisplayController>().SetHealthBehavior(_currentPlayerObject.GetComponent<HealthBehavior>());
+            GetComponent<PlayerGUIHealthDisplayController>().SetupGUIDisplay();
         }
             
     }

@@ -8,6 +8,8 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     //Declarations
     [Header("Health Settings")]
     [SerializeField] private bool _isHealthFullOnStart = true;
+    [SerializeField] private bool _isHealthDisplaySet = false;
+    [SerializeField] private IDisplayable _healthDisplayBehaviorRef;
     [SerializeField] private int _healthMax = 3;
     [SerializeField] private int _healthCurrent = 3;
     [SerializeField] private float _invulnerabilityDuration = .5f;
@@ -41,6 +43,9 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         {
             _healthCurrent -= value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
+
             OnDamaged?.Invoke();
 
             if (_healthCurrent == 0)
@@ -59,6 +64,8 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         {
             _healthCurrent += value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
             OnHealed?.Invoke();
         }
     }
@@ -75,6 +82,8 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         {
             _healthCurrent = value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
         }
     }
 
@@ -84,6 +93,8 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         {
             _healthMax = value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
         }
     }
 
@@ -117,6 +128,14 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     {
         return _invulnerabilityDuration;
     }
+
+    public void SetHealthDisplayBehavior(IDisplayable newDisplayBehavior)
+    {
+        _healthDisplayBehaviorRef = newDisplayBehavior;
+        _isHealthDisplaySet = true;
+
+    }
+
 
     //Logs
     public void LogDamageTaken()

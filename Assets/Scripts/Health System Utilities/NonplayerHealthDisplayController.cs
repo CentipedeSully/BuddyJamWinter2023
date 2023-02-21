@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NonplayerHealthDisplayController : MonoBehaviour
+public class NonplayerHealthDisplayController : MonoBehaviour, IDisplayable
 {
     //Declarations
     [SerializeField] private GameObject _healthBarObject;
@@ -27,11 +27,21 @@ public class NonplayerHealthDisplayController : MonoBehaviour
 
     private void Start()
     {
-        UpdateHealthBar();
+        SetupGUIDisplay();
     }
 
     //Utilities
-    public void UpdateHealthBar()
+    public void UpdateGUIDisplay()
+    {
+        UpdateHealthBar();
+    }
+
+    public void SetupGUIDisplay()
+    {
+        _healthBehaviorRef.SetHealthDisplayBehavior(this);
+    }
+
+    private void UpdateHealthBar()
     {
         if (_healthBarObject != null && _healthBehaviorRef != null)
         {

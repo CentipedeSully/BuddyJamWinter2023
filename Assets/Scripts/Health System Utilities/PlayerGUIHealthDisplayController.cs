@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGUIHealthDisplayController : MonoBehaviour
+public class PlayerGUIHealthDisplayController : MonoBehaviour, IDisplayable
 {
     //Declarations
     [Header("Display Settings")]
@@ -17,6 +17,23 @@ public class PlayerGUIHealthDisplayController : MonoBehaviour
         if (_healthReference == null)
             _healthReference = GetComponent<HealthBehavior>();
     }
+
+    private void Start()
+    {
+        SetupGUIDisplay();
+    }
+
+    //Interface
+    public void UpdateGUIDisplay()
+    {
+        UpdateHealthDisplay();
+    }
+
+    public void SetupGUIDisplay()
+    {
+        _healthReference.SetHealthDisplayBehavior(this);
+    }
+
 
     //Utilites
     private void EmptyHearts()
@@ -51,9 +68,14 @@ public class PlayerGUIHealthDisplayController : MonoBehaviour
         }
     }
 
-    public void UpdateHealthDisplay()
+    private void UpdateHealthDisplay()
     {
         FillToAmount(_healthReference.GetCurrentHealth());
+    }
+    public void SetHealthBehavior(HealthBehavior newHealthBehavior)
+    {
+        _healthReference = newHealthBehavior;
+        UpdateGUIDisplay();
     }
 
 }

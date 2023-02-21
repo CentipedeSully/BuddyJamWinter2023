@@ -56,7 +56,8 @@ public class HostileMeleeBehavior : MonoBehaviour
 
         else
         {
-            _moveReference.SetMoveDirection((_target.transform.position - transform.position).normalized);
+            if (_target != null)
+                _moveReference.SetMoveDirection((_target.transform.position - transform.position).normalized);
             DeaggroIfTargetIstooFarAway();
         }
     }
@@ -70,6 +71,8 @@ public class HostileMeleeBehavior : MonoBehaviour
             if (targetDistance > _aggroRange)
                 Deaggro();
         }
+        else if (_target == null)
+            Deaggro();
     }
 
     private void AggroIfValidTargetIsInVicinity()
