@@ -10,6 +10,7 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     [SerializeField] private bool _isHealthFullOnStart = true;
     [SerializeField] private bool _isHealthDisplaySet = false;
     [SerializeField] private IDisplayable _healthDisplayBehaviorRef;
+    [SerializeField] private IDeathBehavior _deathBehavior;
     [SerializeField] private int _healthMax = 3;
     [SerializeField] private int _healthCurrent = 3;
     [SerializeField] private float _invulnerabilityDuration = .5f;
@@ -27,6 +28,8 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     {
         if (_isHealthFullOnStart)
             _healthCurrent = _healthMax;
+
+        _deathBehavior = GetComponent<IDeathBehavior>();
     }
 
 
@@ -49,7 +52,11 @@ public class HealthBehavior : MonoBehaviour, IDamagable
             OnDamaged?.Invoke();
 
             if (_healthCurrent == 0)
+            {
+                _deathBehavior.EnterDeathSequence();   
                 OnDeath?.Invoke();
+            }
+                
             else
             {
                 _isInvulnerable = true;
@@ -69,6 +76,7 @@ public class HealthBehavior : MonoBehaviour, IDamagable
             OnHealed?.Invoke();
         }
     }
+
 
     private void EndInvulnerability()
     {

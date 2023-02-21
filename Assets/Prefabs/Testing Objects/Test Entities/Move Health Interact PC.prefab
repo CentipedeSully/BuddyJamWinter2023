@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5185052405731098297}
   - component: {fileID: 5185052405731098302}
   - component: {fileID: 7010537871985223848}
+  - component: {fileID: 2443279379283957444}
+  - component: {fileID: 3757109547347256569}
   m_Layer: 0
   m_Name: Move Health Interact PC
   m_TagString: Player
@@ -144,6 +146,41 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2443279379283957444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185052405731098299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56823d3302a1f841a229f619d72c61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathAnimClipName: PlayerDeath_anim
+  _triggerParameterName: OnDeath
+  _deathFadeoutDuration: 5
+--- !u!95 &3757109547347256569
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185052405731098299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5157a0a354c642844883a22598d7873b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5592962475237502361
 GameObject:
   m_ObjectHideFlags: 0

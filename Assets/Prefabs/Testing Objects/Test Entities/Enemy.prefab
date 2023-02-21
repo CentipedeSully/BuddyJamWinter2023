@@ -248,6 +248,9 @@ GameObject:
   - component: {fileID: 2821575228610229872}
   - component: {fileID: 2821575228610229879}
   - component: {fileID: 2821575228610229886}
+  - component: {fileID: 1067230276929422436}
+  - component: {fileID: 8367070021734540558}
+  - component: {fileID: 6639732462047546700}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -262,7 +265,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2821575228610229874}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -309,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isHealthFullOnStart: 1
+  _isHealthDisplaySet: 0
   _healthMax: 3
   _healthCurrent: 3
   _invulnerabilityDuration: 0.5
@@ -420,6 +424,55 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1067230276929422436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821575228610229874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2b3981a03c36d46a4b4993647a928c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathAnimClipName: EnemyDeath_anim
+  _triggerParameterName: OnDeath
+--- !u!95 &8367070021734540558
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821575228610229874}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 822a47786d557bb4a97cbe848aac8204, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6639732462047546700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2821575228610229874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ec6be5f10bff34b945b3f911ad69e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthReference: {fileID: 3296229562829590038}
+  _damageInputCooldownDuration: 0.5
+  _healInputCooldownDuration: 0.5
 --- !u!1 &3261467823392073040
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,10 +15,7 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
 
 
     //Monobehaviors
-    private void Update()
-    {
-        SpawnPlayerOnCommand();
-    }
+
 
 
     //Utilities
@@ -35,6 +32,10 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
 
             GetComponent<PlayerGUIHealthDisplayController>().SetHealthBehavior(_currentPlayerObject.GetComponent<HealthBehavior>());
             GetComponent<PlayerGUIHealthDisplayController>().SetupGUIDisplay();
+
+            DisablePlayerControls();
+            UiManager.Instance.GetScreenFadeController().FadeToTransparent(2);
+            Invoke("EnablePlayerControls", 2);
         }
             
     }
@@ -51,6 +52,10 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             _playerControllerRef.EnableControls();
     }
 
+    public void ReportPlayerDeath()
+    {
+        _currentPlayerObject = null;
+    }
 
     //Getters and Setters
     public GameObject GetCurrentPlayerObject()
