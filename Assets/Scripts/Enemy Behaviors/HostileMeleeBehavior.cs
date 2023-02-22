@@ -33,7 +33,7 @@ public class HostileMeleeBehavior : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag(_validTargetTag))
-            collision.gameObject.GetComponent<IDamagable>().TakeDamage(_contactDamage);
+            collision.gameObject.GetComponent<IDamagable>().TakeDamageAndKnockBack(_contactDamage, transform);
     }
 
 
@@ -56,8 +56,10 @@ public class HostileMeleeBehavior : MonoBehaviour
 
         else
         {
-            if (_target != null)
+            if (_target != null && PlayerObjectManager.Instance.IsPlayerAlive())
                 _moveReference.SetMoveDirection((_target.transform.position - transform.position).normalized);
+            else if (PlayerObjectManager.Instance.IsPlayerAlive() == false)
+                Deaggro();
             DeaggroIfTargetIstooFarAway();
         }
     }

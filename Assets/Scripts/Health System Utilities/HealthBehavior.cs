@@ -39,13 +39,20 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         DamageHealth(value);
     }
 
+    public void TakeDamageAndKnockBack(int value, Transform damageOrigin)
+    {
+        if (_isInvulnerable == false)
+            KnockBackSelf(damageOrigin, value * 6500);
+        DamageHealth(value);
+    }
     //Utilites
     public void DamageHealth(int value)
     {
         if (value >= 0 && _healthCurrent > 0 && !_isInvulnerable)
         {
             _healthCurrent -= value;
-            Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            _healthCurrent = Mathf.Clamp(_healthCurrent, 0, _healthMax);
+
             if (_isHealthDisplaySet)
                 _healthDisplayBehaviorRef.UpdateGUIDisplay();
 
@@ -63,6 +70,13 @@ public class HealthBehavior : MonoBehaviour, IDamagable
                 Invoke("EndInvulnerability", _invulnerabilityDuration);
             }
         }
+    }
+
+    public void KnockBackSelf( Transform damageOrigin,float forceMagnitude)
+    {
+        Vector3 knockBackDirection = (transform.position - damageOrigin.position).normalized;
+        Debug.Log("Knockback direction: " + knockBackDirection);
+        GetComponent<Rigidbody2D>().AddForce(knockBackDirection * forceMagnitude * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     public void HealHealth(int value)

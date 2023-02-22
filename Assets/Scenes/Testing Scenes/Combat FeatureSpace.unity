@@ -2799,7 +2799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.58431375}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.47058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5891,6 +5891,11 @@ MonoBehaviour:
   _playerControllerRef: {fileID: 2886248336626342159}
   _cameraFollowTransformOnRespawn: {fileID: 0}
   _isPlayerFollowObjectOnSpawn: 0
+  _hasRespawnDialogueBeenShownOnce: 0
+  _respawnDialogue:
+  - ... Huh?
+  - Oh. I must've dozed off...
+  - I should be more careful.
 --- !u!1 &8808981426375920179
 GameObject:
   m_ObjectHideFlags: 0

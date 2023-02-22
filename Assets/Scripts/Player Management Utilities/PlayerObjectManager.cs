@@ -12,7 +12,8 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     [SerializeField] private PlayerController _playerControllerRef;
     [SerializeField] private Transform _cameraFollowTransformOnRespawn;
     [SerializeField] private bool _isPlayerFollowObjectOnSpawn = false;
-
+    [SerializeField] private bool _hasRespawnDialogueBeenShownOnce = false;
+    [SerializeField] private List<string> _respawnDialogue;
 
     //Monobehaviors
 
@@ -34,10 +35,20 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             GetComponent<PlayerGUIHealthDisplayController>().SetupGUIDisplay();
 
             DisablePlayerControls();
-            UiManager.Instance.GetScreenFadeController().FadeToTransparent(2);
-            Invoke("EnablePlayerControls", 2);
+            UiManager.Instance.GetScreenFadeController().FadeToTransparent(2.5f);
+            Invoke("ShowRespawnDialogue", 2.5f);
         }
             
+    }
+
+    public void ShowRespawnDialogue()
+    {
+        if (!_hasRespawnDialogueBeenShownOnce)
+        {
+            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(_respawnDialogue, false);
+            _hasRespawnDialogueBeenShownOnce = true;
+        }
+        else EnablePlayerControls();
     }
 
     public void DisablePlayerControls()

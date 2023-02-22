@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IDamagable
 {
     void TakeDamage(int value);
+
+    void TakeDamageAndKnockBack(int value, Transform damageOrigin);
 }

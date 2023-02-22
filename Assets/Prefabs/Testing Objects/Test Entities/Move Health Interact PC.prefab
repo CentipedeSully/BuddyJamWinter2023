@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5185052405731098303}
   - component: {fileID: 5185052405731098296}
+  - component: {fileID: 3692308817015824224}
   - component: {fileID: 7010537871985223851}
   - component: {fileID: 5432934147361192984}
   - component: {fileID: 5185052405731098297}
@@ -56,6 +57,29 @@ MonoBehaviour:
   _moveInput: {x: 0, y: 0}
   _interactionInput: 0
   _attackInput: 0
+--- !u!114 &3692308817015824224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185052405731098299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76824af5b569b2c4da539270b032b2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _attackRadius: 2
+  _isAttackReady: 1
+  _isAttacking: 0
+  _attackDuration: 0.5
+  _attackCooldown: 1
+  _validTargets:
+  - Enemy
+  OnAttackTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7010537871985223851
 MonoBehaviour:
   m_ObjectHideFlags: 0
