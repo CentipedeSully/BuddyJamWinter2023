@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthBehavior : MonoBehaviour
+public class HealthBehavior : MonoBehaviour, IDamagable
 {
     //Declarations
     [Header("Health Settings")]
     [SerializeField] private bool _isHealthFullOnStart = true;
+    [SerializeField] private bool _isHealthDisplaySet = false;
+    [SerializeField] private IDisplayable _healthDisplayBehaviorRef;
+    [SerializeField] private IDeathBehavior _deathBehavior;
     [SerializeField] private int _healthMax = 3;
     [SerializeField] private int _healthCurrent = 3;
-
+    [SerializeField] private float _invulnerabilityDuration = .5f;
+    [SerializeField] private bool _isInvulnerable = false;
+ 
     [Header("Events")]
     public UnityEvent OnDamaged;
     public UnityEvent OnHealed;
@@ -23,21 +28,55 @@ public class HealthBehavior : MonoBehaviour
     {
         if (_isHealthFullOnStart)
             _healthCurrent = _healthMax;
+
+        _deathBehavior = GetComponent<IDeathBehavior>();
     }
 
 
+    //Interface
+    public void TakeDamage(int value)
+    {
+        DamageHealth(value);
+    }
+
+    public void TakeDamageAndKnockBack(int value, Transform damageOrigin)
+    {
+        if (_isInvulnerable == false)
+            KnockBackSelf(damageOrigin, value * 6500);
+        DamageHealth(value);
+    }
     //Utilites
     public void DamageHealth(int value)
     {
-        if (value >= 0 && _healthCurrent > 0)
+        if (value >= 0 && _healthCurrent > 0 && !_isInvulnerable)
         {
             _healthCurrent -= value;
-            Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            _healthCurrent = Mathf.Clamp(_healthCurrent, 0, _healthMax);
+
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
+
             OnDamaged?.Invoke();
 
             if (_healthCurrent == 0)
+            {
+                _deathBehavior.EnterDeathSequence();   
                 OnDeath?.Invoke();
+            }
+                
+            else
+            {
+                _isInvulnerable = true;
+                Invoke("EndInvulnerability", _invulnerabilityDuration);
+            }
         }
+    }
+
+    public void KnockBackSelf( Transform damageOrigin,float forceMagnitude)
+    {
+        Vector3 knockBackDirection = (transform.position - damageOrigin.position).normalized;
+        Debug.Log("Knockback direction: " + knockBackDirection);
+        GetComponent<Rigidbody2D>().AddForce(knockBackDirection * forceMagnitude * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     public void HealHealth(int value)
@@ -46,10 +85,17 @@ public class HealthBehavior : MonoBehaviour
         {
             _healthCurrent += value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
             OnHealed?.Invoke();
         }
     }
 
+
+    private void EndInvulnerability()
+    {
+        _isInvulnerable = false;
+    }
 
     //Getters and Setters
     public void SetCurrentHealth(int value)
@@ -58,6 +104,8 @@ public class HealthBehavior : MonoBehaviour
         {
             _healthCurrent = value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
         }
     }
 
@@ -67,6 +115,8 @@ public class HealthBehavior : MonoBehaviour
         {
             _healthMax = value;
             Mathf.Clamp(_healthCurrent, 0, _healthMax);
+            if (_isHealthDisplaySet)
+                _healthDisplayBehaviorRef.UpdateGUIDisplay();
         }
     }
 
@@ -79,6 +129,35 @@ public class HealthBehavior : MonoBehaviour
     {
         return _healthMax;
     }
+
+    public bool IsInvunlerable()
+    {
+        return _isInvulnerable;
+    }
+
+    public void SetInvulnerability(bool value)
+    {
+        _isInvulnerable = value;
+    }
+
+    public void SetInvulerabilityDuration(float value)
+    {
+        if (value >= 0)
+            _invulnerabilityDuration = value;
+    }
+
+    public float GetInvulnerabilityDuration()
+    {
+        return _invulnerabilityDuration;
+    }
+
+    public void SetHealthDisplayBehavior(IDisplayable newDisplayBehavior)
+    {
+        _healthDisplayBehaviorRef = newDisplayBehavior;
+        _isHealthDisplaySet = true;
+
+    }
+
 
     //Logs
     public void LogDamageTaken()

@@ -10,7 +10,10 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     [SerializeField] private GameObject _currentPlayerObject;
     [SerializeField] private Transform _currentPlayerSpawnPoint;
     [SerializeField] private PlayerController _playerControllerRef;
-
+    [SerializeField] private Transform _cameraFollowTransformOnRespawn;
+    [SerializeField] private bool _isPlayerFollowObjectOnSpawn = false;
+    [SerializeField] private bool _hasRespawnDialogueBeenShownOnce = false;
+    [SerializeField] private List<string> _respawnDialogue;
 
     //Monobehaviors
 
@@ -19,12 +22,33 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     //Utilities
     public void SpawnPlayer()
     {
-        if (_currentPlayerObject == null)
+        if (IsPlayerAlive() == false)
         {
             _currentPlayerObject = Instantiate(_playerPrefab, _currentPlayerSpawnPoint.position, Quaternion.identity, gameObject.transform);
             _playerControllerRef = _currentPlayerObject.GetComponent<PlayerController>();
+
+            if (_isPlayerFollowObjectOnSpawn || _cameraFollowTransformOnRespawn == null)
+                VirtualCameraHandler.Instance.SetNewFollowTarget(_currentPlayerObject.transform);
+            else VirtualCameraHandler.Instance.SetNewFollowTarget(_cameraFollowTransformOnRespawn);
+
+            GetComponent<PlayerGUIHealthDisplayController>().SetHealthBehavior(_currentPlayerObject.GetComponent<HealthBehavior>());
+            GetComponent<PlayerGUIHealthDisplayController>().SetupGUIDisplay();
+
+            DisablePlayerControls();
+            UiManager.Instance.GetScreenFadeController().FadeToTransparent(2.5f);
+            Invoke("ShowRespawnDialogue", 2.5f);
         }
             
+    }
+
+    public void ShowRespawnDialogue()
+    {
+        if (!_hasRespawnDialogueBeenShownOnce)
+        {
+            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(_respawnDialogue, false);
+            _hasRespawnDialogueBeenShownOnce = true;
+        }
+        else EnablePlayerControls();
     }
 
     public void DisablePlayerControls()
@@ -39,6 +63,10 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             _playerControllerRef.EnableControls();
     }
 
+    public void ReportPlayerDeath()
+    {
+        _currentPlayerObject = null;
+    }
 
     //Getters and Setters
     public GameObject GetCurrentPlayerObject()
@@ -62,5 +90,22 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
             _currentPlayerSpawnPoint = newSpawnPoint;
     }
 
+    public void SetIsPlayerFollowObjectAfterSpawn(bool value)
+    {
+        _isPlayerFollowObjectOnSpawn = value;
+    }
+
+    public void SetFollowObjectAfterSpawn(Transform newTransform)
+    {
+        _cameraFollowTransformOnRespawn = newTransform;
+    }
+
+
+    //Test Utils
+    private void SpawnPlayerOnCommand()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            SpawnPlayer();
+    }
 
 }

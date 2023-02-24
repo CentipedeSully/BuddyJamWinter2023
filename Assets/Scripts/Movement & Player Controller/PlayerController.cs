@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool _attackInput = false;
     private MoveObject _moveObjectReference;
     private PlayerInteractionBehavior _interactBehaviorReference;
+    private PlayerAttackBehavior _attackBehaviorRef;
 
 
     //Monobehaviors
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         _moveObjectReference = GetComponent<MoveObject>();
         _interactBehaviorReference = GetComponent<PlayerInteractionBehavior>();
+        _attackBehaviorRef = GetComponent<PlayerAttackBehavior>();
     }
 
     private void Update()
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
         ReadInteractionInput();
 
         MovePlayerBasedOnInput();
+        AttackBasedOnOnInput();
         InteractBasedOnInput();
     }
 
@@ -60,6 +63,13 @@ public class PlayerController : MonoBehaviour
     {
         if (_isControlsEnabled && _interactionInput)
             _interactBehaviorReference.InteractWithSurroundings();
+    }
+
+    private void AttackBasedOnOnInput()
+    {
+        if (_isControlsEnabled && _attackInput)
+            _attackBehaviorRef.EnterAttack();
+
     }
 
     public void DisableControls()
