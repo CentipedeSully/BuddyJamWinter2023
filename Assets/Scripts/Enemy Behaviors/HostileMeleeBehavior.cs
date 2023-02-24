@@ -93,7 +93,8 @@ public class HostileMeleeBehavior : MonoBehaviour
 
     private void MoveToGuardPosition()
     {
-        _moveReference.SetMoveDirection((_guardPosition.position - transform.position).normalized);
+        if (_guardPosition != null)
+            _moveReference.SetMoveDirection((_guardPosition.position - transform.position).normalized);
     }
 
     public void Aggro(GameObject targetObject)
@@ -129,5 +130,10 @@ public class HostileMeleeBehavior : MonoBehaviour
     {
         if (newDistance >= 0)
             _aggroRange = newDistance;
+    }
+
+    public void SetGuardPosition(Transform position)
+    {
+        _guardPosition = position;
     }
 }
