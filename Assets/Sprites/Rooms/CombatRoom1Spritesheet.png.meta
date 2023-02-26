@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36b9dc960f7babc43a78cc27a1c0b710
+guid: 6ec4982b98af93041adbd6063fa06f2a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OlivespritesheetInjured_2
+      name: CombatRoom1Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 6
-        width: 60
-        height: 100
+        x: 59
+        y: 1169
+        width: 396
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08aa334e76c851441a93bdfae114240c
-      internalID: 899683532
+      spriteID: d5d03abadf7d7fc42b535e827ec1fb56
+      internalID: 171016297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetInjured_3
+      name: CombatRoom1Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 167
-        y: 6
-        width: 59
-        height: 101
+        x: 593
+        y: 1233
+        width: 354
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0c43b8b835fe014983913aae16072c1
-      internalID: -509550432
+      spriteID: a5311d0f06914834095bc731dc7713b3
+      internalID: 757739231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetInjured_4
+      name: CombatRoom1Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 298
-        y: 6
-        width: 70
-        height: 81
+        x: 1238
+        y: 1198
+        width: 98
+        height: 292
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca578d05cf2a4a4cb90cee5f74c6323
-      internalID: -937195748
+      spriteID: 209607ed0ee71e24d91dd682db9c18dc
+      internalID: 185868638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetInjured_6
+      name: CombatRoom1Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 429
-        y: 6
-        width: 67
-        height: 81
+        x: 1734
+        y: 1212
+        width: 98
+        height: 292
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd53d055326c7cd4b85d00e9a8a9d692
-      internalID: 1784612945
+      spriteID: 70a313e9d5fd2d648b6e658038065490
+      internalID: 399017597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CombatRoom1Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 28
+        width: 1346
+        height: 1026
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03cd64a5822e8c44a12095bf8016d5b
+      internalID: -413488872
       vertices: []
       indices: 
       edges: []
@@ -211,13 +232,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OlivespritesheetInjured_3: -509550432
-      OlivespritesheetInjured_5: 1065054677
-      OlivespritesheetInjured_6: 1784612945
-      OlivespritesheetInjured_1: 1247114771
-      OlivespritesheetInjured_0: -870310180
-      OlivespritesheetInjured_2: 899683532
-      OlivespritesheetInjured_4: -937195748
+      CombatRoom1Spritesheet_2: -140915981
+      CombatRoom1Spritesheet_5: -413488872
+      CombatRoom1Spritesheet_3: 185868638
+      CombatRoom1Spritesheet_4: 399017597
+      CombatRoom1Spritesheet_1: 757739231
+      CombatRoom1Spritesheet_0: 171016297
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

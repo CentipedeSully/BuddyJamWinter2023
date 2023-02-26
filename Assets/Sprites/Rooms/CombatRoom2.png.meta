@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36b9dc960f7babc43a78cc27a1c0b710
+guid: d50f8a7027c7a3a4d88c71b6455b795b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,91 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: OlivespritesheetInjured_2
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 6
-        width: 60
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08aa334e76c851441a93bdfae114240c
-      internalID: 899683532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetInjured_3
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 6
-        width: 59
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0c43b8b835fe014983913aae16072c1
-      internalID: -509550432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetInjured_4
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 6
-        width: 70
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ca578d05cf2a4a4cb90cee5f74c6323
-      internalID: -937195748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetInjured_6
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 6
-        width: 67
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd53d055326c7cd4b85d00e9a8a9d692
-      internalID: 1784612945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -210,14 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      OlivespritesheetInjured_3: -509550432
-      OlivespritesheetInjured_5: 1065054677
-      OlivespritesheetInjured_6: 1784612945
-      OlivespritesheetInjured_1: 1247114771
-      OlivespritesheetInjured_0: -870310180
-      OlivespritesheetInjured_2: 899683532
-      OlivespritesheetInjured_4: -937195748
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

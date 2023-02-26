@@ -15,7 +15,8 @@ public abstract class DeathBehavior : MonoBehaviour, IDeathBehavior
     private void Awake()
     {
         _animatorReference = GetComponent<Animator>();
-        GetAnimationClipLength(_deathAnimClipName);
+        if (_animatorReference != null)
+            GetAnimationClipLength(_deathAnimClipName);
     }
 
 

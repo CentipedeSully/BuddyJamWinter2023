@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 14e990edaf94ab141b5ad6da4937c09b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 2181
+        width: 257
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bae42eaf6f5696478788b91712b7857
+      internalID: 444228442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 2313
+        width: 212
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e6c294f3e62ed4f8ab9896f53e7e70
+      internalID: -992057955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 2218
+        width: 455
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b31d351f8a4da44bf05a5441f30073
+      internalID: -1361442508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 2294
+        width: 186
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacb275c01fae804d959e523809b6f92
+      internalID: -2084021211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2157
+        width: 100
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3595d0e4c3cee47a386f7bc4fb38cf
+      internalID: -380190545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 2283
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea0d807217404b479dd9adb456774cb
+      internalID: -1830054547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1735
+        width: 299
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f0261bb02b0cf488acfdfa89bc62c9
+      internalID: -86629189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1679
+        width: 491
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9831efadbe29ae44092e5fc8e42b7c23
+      internalID: -1550773552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1765
+        width: 142
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11d887746a363e43b35f7076a1c8795
+      internalID: 1753606014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1762
+        width: 264
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0dc2fcb3f6d254caa44ed5987cf2e7
+      internalID: 543273369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2284
+        y: 1827
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123938d24c1279c4fbac88575c45b8aa
+      internalID: -174579673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1780
+        width: 223
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2cad1c82ffd2b9409bfca95b5a9ff0b
+      internalID: 992349774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1255
+        width: 108
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48eb13b7621214e4d9b0a8d2daf88cac
+      internalID: -576493914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 1268
+        width: 172
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a66a703e5a1d81498e3caceb5b3cbee
+      internalID: -1401770923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 1226
+        width: 172
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1b222ac5d1cd748aa16f24c0147f39
+      internalID: 371715633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 1265
+        width: 123
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2910f77581219634d9f1935f021f6ee1
+      internalID: -722283061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1305
+        width: 225
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69a83b994c17094ca87a887197e4c8e
+      internalID: -111392793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 28
+        width: 1188
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61dda4b7b507c343ad55c35f4518b35
+      internalID: -1208570672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 707
+        width: 70
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e23596978695d42b92345fcfcc6c32
+      internalID: 1288531534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 254
+        width: 100
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726085586ba5c5f4bb30a37edb7d7400
+      internalID: 235545239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DreamRoomSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1216
+        width: 187
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a50d67f3ed0af4aa99ad08c93e0b54
+      internalID: -1519595163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DreamRoomSpriteSheet_20: 235545239
+      DreamRoomSpriteSheet_14: -576493914
+      DreamRoomSpriteSheet_17: -722283061
+      DreamRoomSpriteSheet_2: -1361442508
+      DreamRoomSpriteSheet_18: -1208570672
+      DreamRoomSpriteSheet_5: -1830054547
+      DreamRoomSpriteSheet_4: -380190545
+      DreamRoomSpriteSheet_6: 1753606014
+      DreamRoomSpriteSheet_26: -1437698320
+      DreamRoomSpriteSheet_10: -174579673
+      DreamRoomSpriteSheet_28: -177710788
+      DreamRoomSpriteSheet_1: -992057955
+      DreamRoomSpriteSheet_29: 1980066890
+      DreamRoomSpriteSheet_19: 1288531534
+      DreamRoomSpriteSheet_9: 543273369
+      DreamRoomSpriteSheet_23: 1152467842
+      DreamRoomSpriteSheet_15: -1401770923
+      DreamRoomSpriteSheet_25: -1877199825
+      DreamRoomSpriteSheet_27: -803374794
+      DreamRoomSpriteSheet_13: -1519595163
+      DreamRoomSpriteSheet_0: 444228442
+      DreamRoomSpriteSheet_8: -1550773552
+      DreamRoomSpriteSheet_7: -86629189
+      DreamRoomSpriteSheet_3: -2084021211
+      DreamRoomSpriteSheet_16: 371715633
+      DreamRoomSpriteSheet_11: 992349774
+      DreamRoomSpriteSheet_12: -111392793
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

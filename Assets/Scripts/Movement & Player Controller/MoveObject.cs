@@ -8,6 +8,7 @@ public class MoveObject : MonoBehaviour
     private Vector3 _moveDirection;
     [SerializeField] private float _moveSpeed;
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     //Monobehaviors
     private void Awake()
@@ -18,9 +19,23 @@ public class MoveObject : MonoBehaviour
     private void Update()
     {
         MoveObjectViaRigidbody();
+        if (_moveDirection.x != 0)
+            FlipSprite();
     }
 
     //Utilites
+    private void FlipSprite()
+    {
+        if (_spriteRenderer != null)
+        {
+            if (_moveDirection.x < -0.1 && _spriteRenderer.gameObject.transform.localScale.x > 0)
+                _spriteRenderer.gameObject.transform.localScale = new Vector3(-1 * _spriteRenderer.gameObject.transform.localScale.x, _spriteRenderer.gameObject.transform.localScale.y, _spriteRenderer.gameObject.transform.localScale.z);
+
+            else if (_moveDirection.x > 0.1 && _spriteRenderer.gameObject.transform.localScale.x < 0)
+                _spriteRenderer.gameObject.transform.localScale = new Vector3(Mathf.Abs(_spriteRenderer.gameObject.transform.localScale.x), _spriteRenderer.gameObject.transform.localScale.y, _spriteRenderer.gameObject.transform.localScale.z);
+        }
+    }
+
     private void MoveObjectViaRigidbody()
     {
         if (_rigidbody2D != null)

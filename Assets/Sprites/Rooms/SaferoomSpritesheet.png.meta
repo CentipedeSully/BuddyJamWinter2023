@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b2719b32f2a7da4da8437cc7a6b7997
+guid: 522acd2d81b13b641b63a19befd33686
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,118 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_2
+      name: SaferoomSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 126
-        y: 5
-        width: 56
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7645b0e8126b2b447be8a209274b7c72
-      internalID: -503435821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetDefeat_3
-      rect:
-        serializedVersion: 2
-        x: 403
-        y: 5
-        width: 52
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b48a940fe39b1c46b04b50b5451a8e8
-      internalID: 642984417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetDefeat_4
-      rect:
-        serializedVersion: 2
-        x: 688
-        y: 7
-        width: 61
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22da02a41d187fc4caf22eea4d32d17b
-      internalID: -1524953549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetDefeat_5
-      rect:
-        serializedVersion: 2
-        x: 971
-        y: 7
-        width: 53
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cee9c78c21e232e4dba9928219c1227f
-      internalID: -980130370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetDefeat_6
-      rect:
-        serializedVersion: 2
-        x: 1255
-        y: 7
-        width: 54
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 926f30af79549eb47a4974d7fe901b5d
-      internalID: -471899658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OlivespritesheetDefeat_7
-      rect:
-        serializedVersion: 2
-        x: 1495
-        y: 7
+        x: 201
+        y: 2209
         width: 112
-        height: 103
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 834f1416ab955334b9dc9d4222a7cc27
-      internalID: 362035023
+      spriteID: 036adbe3e97ee81478619082b6743e73
+      internalID: -1589588554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_10
+      name: SaferoomSpritesheet_1
       rect:
         serializedVersion: 2
-        x: 1758
-        y: 6
-        width: 91
-        height: 62
+        x: 718
+        y: 2228
+        width: 105
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 428a9d2d2ecc43f47bd2926d06ae2852
-      internalID: -674659691
+      spriteID: 541588b55d762e74db327ed0d91c3929
+      internalID: -1246911944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_12
+      name: SaferoomSpritesheet_2
       rect:
         serializedVersion: 2
-        x: 2044
-        y: 4
-        width: 86
-        height: 45
+        x: 1195
+        y: 2245
+        width: 180
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21bdf8c95c1a9d549ba2068aa185622b
-      internalID: -128193400
+      spriteID: db3839b937fd72f44a7b4d53b9dc558c
+      internalID: 307536533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_13
+      name: SaferoomSpritesheet_3
       rect:
         serializedVersion: 2
-        x: 2326
-        y: 4
-        width: 88
-        height: 45
+        x: 1741
+        y: 2172
+        width: 116
+        height: 305
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba69c77f7bbe684b87128b1453bee3e
-      internalID: 1027116681
+      spriteID: 962d8c42521b77a43b50743dc5f29df9
+      internalID: 1660083323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_14
+      name: SaferoomSpritesheet_4
       rect:
         serializedVersion: 2
-        x: 2609
-        y: 4
-        width: 88
-        height: 47
+        x: 2277
+        y: 2260
+        width: 73
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fae63d3e55afd4e893d7e1a07f8290
-      internalID: -380650074
+      spriteID: e6ab2d221058d9d4388ceea0e333ae61
+      internalID: 189467830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OlivespritesheetDefeat_15
+      name: SaferoomSpritesheet_5
       rect:
         serializedVersion: 2
-        x: 2892
-        y: 4
-        width: 88
-        height: 45
+        x: 1823
+        y: 2149
+        width: 19
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +236,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf5e0ec6dd58db245959be054c6bda14
-      internalID: 1197323756
+      spriteID: dcf2af6c767428f4db949800527bc521
+      internalID: 1933617834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1652
+        width: 99
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5a657421924944584aa9cc58dc43b5
+      internalID: -343762859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1652
+        width: 99
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c40cb10a36aa844b0dcdfece29e37b
+      internalID: -453077286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1726
+        width: 696
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787df715e72f29e49a3047445b8bbc2e
+      internalID: 938363549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1745
+        width: 73
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10d2293c7b3dfa47a74ad5fc3794668
+      internalID: 234737837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 1734
+        width: 99
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2728c7861cc5a614e8bad29eb29ce133
+      internalID: 1185592614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 519
+        width: 771
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6395ca31b784564cb3ffc8984cf92c6
+      internalID: -1027991430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 738
+        width: 118
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61368c208650c90408be9029831c4f73
+      internalID: 2023999838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2657
+        y: 1226
+        width: 72
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a4df8fd4be18f48b393d680862de35
+      internalID: 1130693866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 697
+        width: 106
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4738c56af48e384383dea3f179eaac6
+      internalID: 634666094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaferoomSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 184
+        width: 107
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca69ea8013a433f4682b02e97adeda0c
+      internalID: -80864444
       vertices: []
       indices: 
       edges: []
@@ -358,23 +463,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OlivespritesheetDefeat_9: 267337833
-      OlivespritesheetDefeat_7: 362035023
-      OlivespritesheetDefeat_13: 1027116681
-      OlivespritesheetDefeat_16: -973119757
-      OlivespritesheetDefeat_8: -1632721690
-      OlivespritesheetDefeat_1: -603471875
-      OlivespritesheetDefeat_2: -503435821
-      OlivespritesheetDefeat_3: 642984417
-      OlivespritesheetDefeat_6: -471899658
-      OlivespritesheetDefeat_10: -674659691
-      OlivespritesheetDefeat_14: -380650074
-      OlivespritesheetDefeat_11: 1606934095
-      OlivespritesheetDefeat_0: 318578466
-      OlivespritesheetDefeat_4: -1524953549
-      OlivespritesheetDefeat_5: -980130370
-      OlivespritesheetDefeat_15: 1197323756
-      OlivespritesheetDefeat_12: -128193400
+      SaferoomSpritesheet_1: -1246911944
+      SaferoomSpritesheet_9: 938363549
+      SaferoomSpritesheet_5: 1933617834
+      SaferoomSpritesheet_7: -453077286
+      SaferoomSpritesheet_6: -343762859
+      SaferoomSpritesheet_13: 1130693866
+      SaferoomSpritesheet_2: 307536533
+      SaferoomSpritesheet_8: 1185592614
+      SaferoomSpritesheet_0: -1589588554
+      SaferoomSpritesheet_15: -80864444
+      SaferoomSpritesheet_3: 1660083323
+      SaferoomSpritesheet_14: 634666094
+      SaferoomSpritesheet_12: 2023999838
+      SaferoomSpritesheet_4: 189467830
+      SaferoomSpritesheet_10: 234737837
+      SaferoomSpritesheet_11: -1027991430
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
