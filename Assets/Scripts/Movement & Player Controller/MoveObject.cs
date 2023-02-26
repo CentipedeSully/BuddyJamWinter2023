@@ -8,22 +8,35 @@ public class MoveObject : MonoBehaviour
     private Vector3 _moveDirection;
     [SerializeField] private float _moveSpeed;
     private Rigidbody2D _rigidbody2D;
+    private PlayerAnimController _playerAnimControllerRef;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     //Monobehaviors
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _playerAnimControllerRef = GetComponent<PlayerAnimController>();
     }
 
     private void Update()
     {
         MoveObjectViaRigidbody();
+        AnimateMovement();
         if (_moveDirection.x != 0)
             FlipSprite();
+        
+        
     }
 
     //Utilites
+    private void AnimateMovement()
+    {
+        if (Mathf.Abs(_moveDirection.magnitude) > 0 && _playerAnimControllerRef.IsPlayerMoveAnimPlaying() == false)
+            _playerAnimControllerRef.SetMoveAnimState(true);
+        else if (Mathf.Abs(_moveDirection.magnitude) == 0 && _playerAnimControllerRef.IsPlayerMoveAnimPlaying() == true)
+            _playerAnimControllerRef.SetMoveAnimState(false);
+    }
+
     private void FlipSprite()
     {
         if (_spriteRenderer != null)

@@ -2571,26 +2571,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dd683f4534dcb4cad2c90f84d9d3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1178082424
-Animator:
-  serializedVersion: 5
+--- !u!114 &1178082427
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178082412}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5157a0a354c642844883a22598d7873b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9a540209902f14798c338d89acff46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAnimator: {fileID: 0}
+  _deathTriggerName: OnDeath
+  _moveBoolName: isMoving
+  _attackBoolName: isAttacking
 --- !u!1 &1181045915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5763,8 +5759,10 @@ MonoBehaviour:
   _isPlayerFollowObjectOnSpawn: 0
   _hasRespawnDialogueBeenShownOnce: 0
   _respawnDialogue:
-  - 'Huh? '
+  - '... Huh? '
   - Did I... Fall asleep?
+  - ...
+  - That's Right! Bubbles!!
 --- !u!4 &5165798899474429215
 Transform:
   m_ObjectHideFlags: 0
@@ -5818,10 +5816,10 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1178082413}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 10.8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5901,7 +5899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5995207202136810117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5936,7 +5934,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 10.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

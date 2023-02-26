@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class PlayerAttackBehavior : MonoBehaviour
 {
     //Declarations
+    private PlayerAnimController _playerAnimControllerRef;
+    [SerializeField] private string _attackAnimName;
     [SerializeField] private int _damage;
     [SerializeField] private float _attackRadius;
     [SerializeField] private bool _isAttackReady = true;
@@ -21,6 +23,12 @@ public class PlayerAttackBehavior : MonoBehaviour
 
 
     //Monobehaviors
+    private void Awake()
+    {
+        _playerAnimControllerRef = GetComponent<PlayerAnimController>();
+        _attackDuration = _playerAnimControllerRef.GetAnimClipLength(_attackAnimName);
+    }
+
     private void Update()
     {
         ManageAttackState();
@@ -59,6 +67,7 @@ public class PlayerAttackBehavior : MonoBehaviour
         {
             _isAttacking = true;
             _isAttackReady = false;
+            _playerAnimControllerRef.SetAttackAnimState(true);
             OnAttackTriggered?.Invoke();
         }
     }
@@ -73,6 +82,7 @@ public class PlayerAttackBehavior : MonoBehaviour
             if (_currentAttackDuration >= _attackDuration)
             {
                 _isAttacking = false;
+                _playerAnimControllerRef.SetAttackAnimState(false);
                 Invoke("ReadyAttack", _attackCooldown);
             }
         }

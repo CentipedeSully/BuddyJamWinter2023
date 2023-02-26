@@ -25,7 +25,7 @@ public class PlayerDeathBehavior : DeathBehavior
         PlayerObjectManager.Instance.ReportPlayerDeath();
 
         //Trigger player sleep anim
-        //_animatorReference.SetTrigger(_triggerParameterName);
+        GetComponent<PlayerAnimController>()?.TriggerDeathAnim();
 
         //FadeTo Black
         UiManager.Instance.GetScreenFadeController().FadeToBlack(_deathFadeoutDuration);
