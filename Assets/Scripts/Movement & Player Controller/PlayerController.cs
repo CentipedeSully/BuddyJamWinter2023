@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void ReadInteractionInput()
     {
-        _interactionInput = Input.GetKeyDown(KeyCode.F);
+        _interactionInput = Input.GetKey(KeyCode.F);
         //if (_interactionInput == true) Debug.Log("Interact Pressed");
     }
 
