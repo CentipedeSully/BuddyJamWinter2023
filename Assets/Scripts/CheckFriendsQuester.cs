@@ -57,5 +57,10 @@ public class CheckFriendsQuester : MonoBehaviour
         else return false;
     }
 
+    public bool IsQuestCompleted()
+    {
+        return IsEveryoneChecked();
+    }
+
 
 }

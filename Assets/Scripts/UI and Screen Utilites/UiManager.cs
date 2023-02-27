@@ -8,7 +8,7 @@ public class UiManager : MonoSingleton<UiManager>
     //Declarations
     [SerializeField] private ScreenFadeController _fadeControllerRef;
     [SerializeField] private DialogueDisplayController _dialogueControllerRef;
-
+    [SerializeField] private AnxietyDisplayController _anxietyDisplayControllerRef;
 
     //Monobehaviors
 
@@ -25,6 +25,11 @@ public class UiManager : MonoSingleton<UiManager>
     public DialogueDisplayController GetDialogueControllerRef()
     {
         return _dialogueControllerRef;
+    }
+
+    public AnxietyDisplayController GetAnxietyDisplayController()
+    {
+        return _anxietyDisplayControllerRef;
     }
 
 }

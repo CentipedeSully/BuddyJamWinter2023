@@ -11,7 +11,7 @@ public class FindBubblesQuest : MonoBehaviour
     [SerializeField] private bool _isSouthWestDresserChecked = false;
     [SerializeField] private bool _isSideBedDresserChecked = false;
     [SerializeField] private bool _isFootBedDresserChecked = false;
-
+    [SerializeField] private CheckFriendsQuester _prevFriendsQuestRef;
     [Header("Events")]
     public UnityEvent OnEverythingChecked;
 
@@ -22,44 +22,56 @@ public class FindBubblesQuest : MonoBehaviour
     //utilites
     private bool IsEverythingChecked()
     {
-        if (_isNorthEastDresserChecked && _isBedChecked && _isFootBedDresserChecked && _isSideBedDresserChecked && _isSouthWestDresserChecked)
+        if (_isNorthEastDresserChecked && _isBedChecked && _isFootBedDresserChecked && _isSideBedDresserChecked && _isSouthWestDresserChecked && _prevFriendsQuestRef.IsQuestCompleted())
             return true;
         else return false;
     }
 
     public void CheckBed()
     {
-        _isBedChecked = true;
-        if (IsEverythingChecked())
-            OnEverythingChecked?.Invoke();
+      
+            _isBedChecked = true;
+            if (IsEverythingChecked())
+                OnEverythingChecked?.Invoke();
+
     }
 
     public void CheckNEDreser()
     {
-        _isNorthEastDresserChecked = true;
-        if (IsEverythingChecked())
-            OnEverythingChecked?.Invoke();
+  
+            _isNorthEastDresserChecked = true;
+            if (IsEverythingChecked())
+                OnEverythingChecked?.Invoke();
+   
+         
     }
 
     public void CheckSWDresser()
     {
-        _isSouthWestDresserChecked = true;
-        if (IsEverythingChecked())
-            OnEverythingChecked?.Invoke();
+    
+            _isSouthWestDresserChecked = true;
+            if (IsEverythingChecked())
+                OnEverythingChecked?.Invoke();
+       
     }
 
     public void CheckFootDresser()
     {
-        _isFootBedDresserChecked = true;
-        if (IsEverythingChecked())
-            OnEverythingChecked?.Invoke();
+       
+            _isFootBedDresserChecked = true;
+            if (IsEverythingChecked())
+                OnEverythingChecked?.Invoke();
+       
     }
 
     public void CheckSideDresser()
     {
-        _isSideBedDresserChecked = true;
-        if (IsEverythingChecked())
-            OnEverythingChecked?.Invoke();
+      
+            _isSideBedDresserChecked = true;
+            if (IsEverythingChecked())
+                OnEverythingChecked?.Invoke();
+        
+       
     }
 
 

@@ -27,7 +27,7 @@ public class PlayerInteractionBehavior : MonoBehaviour
 
             for (int i = 0; i < interactableComponents.Length; i++)
             {
-                Debug.Log("Interactable component: " + interactableComponents[i].ToString());
+                //Debug.Log("Interactable component: " + interactableComponents[i].ToString());
                 interactableComponents[i].Interact();
             }
         }

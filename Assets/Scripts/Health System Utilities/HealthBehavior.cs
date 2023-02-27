@@ -75,7 +75,7 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     public void KnockBackSelf( Transform damageOrigin,float forceMagnitude)
     {
         Vector3 knockBackDirection = (transform.position - damageOrigin.position).normalized;
-        Debug.Log("Knockback direction: " + knockBackDirection);
+        //Debug.Log("Knockback direction: " + knockBackDirection);
         GetComponent<Rigidbody2D>().AddForce(knockBackDirection * forceMagnitude * Time.deltaTime, ForceMode2D.Impulse);
     }
 
