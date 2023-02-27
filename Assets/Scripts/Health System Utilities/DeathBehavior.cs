@@ -8,13 +8,14 @@ public abstract class DeathBehavior : MonoBehaviour, IDeathBehavior
     [SerializeField] protected string _deathAnimClipName;
     [SerializeField] protected string _triggerParameterName;
     protected float _animDuration;
-    protected Animator _animatorReference;
+    [SerializeField] protected Animator _animatorReference;
 
 
     //Monobehaviors
     private void Awake()
     {
-        _animatorReference = GetComponent<Animator>();
+        if (_animatorReference == null)
+            _animatorReference = GetComponent<Animator>();
         if (_animatorReference != null)
             GetAnimationClipLength(_deathAnimClipName);
     }

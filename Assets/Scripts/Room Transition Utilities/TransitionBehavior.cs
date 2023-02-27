@@ -49,4 +49,14 @@ public class TransitionBehavior : MonoBehaviour
         PlayerObjectManager.Instance.EnablePlayerControls();
         OnTransitionEnded?.Invoke();
     }
+
+    public void LockTransitioner()
+    {
+        _isLocked = true;
+    }
+
+    public void UnlockTransitioner()
+    {
+        _isLocked = false;
+    }
 }

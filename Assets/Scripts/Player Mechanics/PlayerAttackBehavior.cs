@@ -82,6 +82,7 @@ public class PlayerAttackBehavior : MonoBehaviour
             if (_currentAttackDuration >= _attackDuration)
             {
                 _isAttacking = false;
+                _currentAttackDuration = 0;
                 _playerAnimControllerRef.SetAttackAnimState(false);
                 Invoke("ReadyAttack", _attackCooldown);
             }

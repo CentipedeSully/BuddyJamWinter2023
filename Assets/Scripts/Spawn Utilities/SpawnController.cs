@@ -67,7 +67,7 @@ public class SpawnController : MonoBehaviour
 
             //Delete the enemies in the room
             foreach (Transform child in transform)
-                Destroy(child); // Typically, destroying like this wouldn't work, but Destroy() defers the destroy unitl after the frame ends, not immediately.
+                Destroy(child.gameObject); // Typically, destroying like this wouldn't work, but Destroy() defers the destroy unitl after the frame ends, not immediately.
 
         }
 

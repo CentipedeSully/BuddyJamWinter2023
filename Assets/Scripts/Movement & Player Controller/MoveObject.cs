@@ -21,7 +21,8 @@ public class MoveObject : MonoBehaviour
     private void Update()
     {
         MoveObjectViaRigidbody();
-        AnimateMovement();
+        if (_playerAnimControllerRef!= null)
+            AnimateMovement();
         if (_moveDirection.x != 0)
             FlipSprite();
         

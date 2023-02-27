@@ -33,6 +33,7 @@ public class SpawnerSquareTrigger : MonoBehaviour
             Collider2D[] detectedColliders = Physics2D.OverlapBoxAll(transform.position, _sizeVector, 0);
             foreach (Collider2D detectedCollider in detectedColliders)
             {
+                Debug.Log(detectedCollider.tag);
                 if (_validTags.Contains(detectedCollider.tag))
                 {
                     _targetController.BeginEncounter();

@@ -93,7 +93,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -211,8 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56823d3302a1f841a229f619d72c61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deathAnimClipName: PlayerDeath_anim
+  _deathAnimClipName: PlayerTransitionToDeath_anim
   _triggerParameterName: OnDeath
+  _animatorReference: {fileID: 8533702027722042106}
   _deathFadeoutDuration: 5
 --- !u!114 &5432934147361192984
 MonoBehaviour:
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ae4a6516c1a34aac2742db934b9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3300
+  _moveSpeed: 5500
   _spriteRenderer: {fileID: 7136461201284529694}
 --- !u!61 &2334539305484932477
 BoxCollider2D:
