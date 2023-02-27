@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _contactDamage: 1
   _isAggroed: 0
-  _aggroRange: 4
+  _aggroRange: 12.25
   _target: {fileID: 0}
   _validTargetTag: Player
   _guardPosition: {fileID: 0}

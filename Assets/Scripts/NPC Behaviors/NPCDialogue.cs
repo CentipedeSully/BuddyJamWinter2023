@@ -26,15 +26,20 @@ public class NPCDialogue : MonoBehaviour, IInteractable
     //Interface Methods
     public void Interact()
     {
+        if (_isDialogueInteractable)
+            StartDialogue();
+    }
+
+    public void ForceInteract()
+    {
         StartDialogue();
+
     }
 
 
     //Utilites
     private void StartDialogue()
-    {
-        if (_isDialogueInteractable)
-        {
+    { 
             UiManager.Instance.GetDialogueControllerRef().EnterDialogue(dialogues[_currentDialogueIndex].list, _isDialogueSkippable);
 
             if (_currentDialogueIndex < dialogues.Count - 1)
@@ -44,7 +49,6 @@ public class NPCDialogue : MonoBehaviour, IInteractable
                 _isAllDialogueExhausted = true;
                 OnAllDialogueExhausted?.Invoke();
             }
-        }
     }
 
     //Getters and Setters

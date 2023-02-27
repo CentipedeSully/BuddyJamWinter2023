@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2910310974593181470, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_RootOrder
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.34
+      value: -11.66
       objectReference: {fileID: 0}
     - target: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_LocalPosition.z
@@ -579,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5892209521484929699, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.57
+      value: 7.4300003
       objectReference: {fileID: 0}
     - target: {fileID: 5892209521484929699, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -759,6 +759,8 @@ GameObject:
   m_Component:
   - component: {fileID: 298402728}
   - component: {fileID: 298402729}
+  - component: {fileID: 298402730}
+  - component: {fileID: 298402731}
   m_Layer: 0
   m_Name: Cloud Shouth
   m_TagString: Untagged
@@ -823,7 +825,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 757739231, guid: 6ec4982b98af93041adbd6063fa06f2a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -833,6 +835,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &298402730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298402727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a16f0100f493040962443703defd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHidden: 1
+  _animatorRef: {fileID: 298402731}
+  _boolParamName: isHidden
+--- !u!95 &298402731
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298402727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a74536355d2df4438748615d26d735e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &324527821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
@@ -1109,7 +1146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404873115}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.47, y: -11.49, z: 0}
+  m_LocalPosition: {x: 21.47, y: 8.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1597,7 +1634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610111680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.438004, y: 8.345737, z: 0}
+  m_LocalPosition: {x: -21.438004, y: -9.654263, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1668,8 +1705,9 @@ GameObject:
   - component: {fileID: 619300135}
   - component: {fileID: 619300136}
   - component: {fileID: 619300137}
+  - component: {fileID: 619300138}
   m_Layer: 0
-  m_Name: body SW girl
+  m_Name: Bonnie
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1732,7 +1770,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: -992057955, guid: 14e990edaf94ab141b5ad6da4937c09b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1786,12 +1824,32 @@ MonoBehaviour:
   _currentDialogueIndex: 0
   dialogues:
   - list:
-    - 1 SW girl
-    - 2 SW girl
-    - 3 SW girl
+    - "\"hhhhhh\u2026 \""
+    - "\"no mom, I don\u2019t want any more oatmeal\u2026\""
+    - "\" nooooooo\u2026\""
   OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &619300138
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619300133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e337cf974a96604b82972c96ba0df02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &651547533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5892209521484929699, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.26
+      value: -11.74
       objectReference: {fileID: 0}
     - target: {fileID: 5892209521484929699, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2308,9 +2366,9 @@ MonoBehaviour:
   _currentDialogueIndex: 0
   dialogues:
   - list:
-    - 1 North boy
-    - 2 north boy
-    - 3 north boy
+    - '"zzzzzzzzzzzzz..."'
+    - '''''...zzzz....zzzzz........'''
+    - '"mmng....."'
   OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
@@ -2349,6 +2407,95 @@ Transform:
   m_Father: {fileID: 706254292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &831940016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831940017}
+  - component: {fileID: 831940019}
+  - component: {fileID: 831940018}
+  m_Layer: 0
+  m_Name: Dialogue Trigger Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831940017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831940016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.09, y: 13.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1803959761}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &831940018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831940016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51fe00f774a5e24baa34f490ba52824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDialogueInteractable: 0
+  _isDialogueSkippable: 0
+  _isAllDialogueExhausted: 0
+  _currentDialogueIndex: 0
+  dialogues:
+  - list:
+    - I-I can't believe it...
+    - The plushies are moving...
+    - ...
+    - ... Did Bubbles leave me on purpose?
+  OnAllDialogueExhausted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &831940019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831940016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82df89a074258944da31781af2737b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeVector: {x: 6.98, y: 7.32}
+  _isTriggerActive: 1
+  _validTags:
+  - Player
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 831940018}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: ForceInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &856694979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,10 +2561,8 @@ MonoBehaviour:
   _enemiesDefeated: 0
   _isEncounterActive: 0
   _isEncounterDefeated: 0
-  StartingDialogue:
-  - A sisnter presence lingers here...
-  EndingDialogue:
-  - The presence from before has faded.
+  StartingDialogue: []
+  EndingDialogue: []
   OnEncounterStarted:
     m_PersistentCalls:
       m_Calls:
@@ -2445,6 +2590,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1866537631}
+        m_TargetAssemblyTypeName: TogglePropVisibility, Assembly-CSharp
+        m_MethodName: ShowObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 298402730}
+        m_TargetAssemblyTypeName: TogglePropVisibility, Assembly-CSharp
+        m_MethodName: ShowObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEncounterEnded:
     m_PersistentCalls:
       m_Calls:
@@ -2463,6 +2632,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1829708572}
         m_TargetAssemblyTypeName: TransitionBehavior, Assembly-CSharp
         m_MethodName: UnlockTransitioner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1866537631}
+        m_TargetAssemblyTypeName: TogglePropVisibility, Assembly-CSharp
+        m_MethodName: FadeObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 298402730}
+        m_TargetAssemblyTypeName: TogglePropVisibility, Assembly-CSharp
+        m_MethodName: FadeObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3112,8 +3305,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1092831594}
   - component: {fileID: 1092831595}
+  - component: {fileID: 1092831596}
   m_Layer: 0
-  m_Name: BodySouth Girl
+  m_Name: ROwan
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3187,6 +3381,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1092831596
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092831593}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e337cf974a96604b82972c96ba0df02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1101054570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3576,8 +3790,15 @@ MonoBehaviour:
   _currentDialogueIndex: 0
   dialogues:
   - list:
-    - 1 computer
-    - 2 computer
+    - It's Rowan's Computer.
+  - list:
+    - The little rectangle screen save is bouncing around.
+  - list:
+    - It's about to hit the corner...
+  - list:
+    - ... Almost ....
+  - list:
+    - Oh. It missed. Maybe next time.
   OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
@@ -4040,7 +4261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.63
+      value: 7.37
       objectReference: {fileID: 0}
     - target: {fileID: 4126993428442168458, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4158,9 +4379,11 @@ MonoBehaviour:
   _currentDialogueIndex: 0
   dialogues:
   - list:
-    - 1 North Girl
-    - 2 north girl
-    - 3 north girl
+    - '"honk SHOO......  "'
+    - '"honk SHOO............"'
+    - "\"memememememe\u2026..\""
+    - ...
+    - Sky's really out of it, isn't she?
   OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
@@ -5107,12 +5330,114 @@ MonoBehaviour:
   _currentDialogueIndex: 0
   dialogues:
   - list:
-    - 1 south girl interacted
-    - 2 south girl interacted
-    - 3 south girl interacted
+    - '"ZZZ-Zzzz-ZZzzz- "'
+    - '"-hngGGggh"'
+    - '"Ppbhww-"'
+    - "\"zZZzzzZZ\u2026\""
+    - ...
+    - I hope he can breath like that...
   OnAllDialogueExhausted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1646963446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646963449}
+  - component: {fileID: 1646963447}
+  - component: {fileID: 1646963448}
+  m_Layer: 0
+  m_Name: Dialogue Trigger N
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1646963447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646963446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82df89a074258944da31781af2737b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeVector: {x: 6.98, y: 3.54}
+  _isTriggerActive: 1
+  _validTags:
+  - Player
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2137465350}
+        m_TargetAssemblyTypeName: SquareTrigger, Assembly-CSharp
+        m_MethodName: DeactivateTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1646963448}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: ForceInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1646963448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646963446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51fe00f774a5e24baa34f490ba52824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDialogueInteractable: 0
+  _isDialogueSkippable: 0
+  _isAllDialogueExhausted: 0
+  _currentDialogueIndex: 0
+  dialogues:
+  - list:
+    - I- I don't remember this room being in the house...
+    - Wait! What's that?!?
+  OnAllDialogueExhausted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1646963449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646963446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.14, y: 1.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1803959761}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677338563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,7 +5709,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803959761}
-  - component: {fileID: 1803959762}
   m_Layer: 0
   m_Name: Triggers
   m_TagString: Untagged
@@ -5400,29 +5724,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803959760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.77, y: 0, z: 0}
+  m_LocalPosition: {x: -14.43, y: -7.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1646963449}
+  - {fileID: 2137465349}
+  - {fileID: 831940017}
   m_Father: {fileID: 706254292}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1803959762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803959760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82df89a074258944da31781af2737b4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sizeVector: {x: 35, y: 30}
-  _targetController: {fileID: 856694981}
-  _validTags:
-  - Player
 --- !u!1 &1816722368
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,6 +5744,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1816722369}
   - component: {fileID: 1816722370}
+  - component: {fileID: 1816722374}
+  - component: {fileID: 1816722373}
+  - component: {fileID: 1816722372}
+  - component: {fileID: 1816722371}
   m_Layer: 0
   m_Name: Cloud SW corner
   m_TagString: Untagged
@@ -5507,6 +5822,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1816722371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816722368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3be3fbba8398704f8c45005da83ac6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1816722372
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816722368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.1043787, y: -0.4733045}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.34375, y: 7.3770037}
+    newSize: {x: 9.34375, y: 7.3770037}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.1349926, y: 6.4303946}
+  m_EdgeRadius: 0
+--- !u!95 &1816722373
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816722368}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a74536355d2df4438748615d26d735e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1816722374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816722368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a16f0100f493040962443703defd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHidden: 1
+  _animatorRef: {fileID: 1816722373}
+  _boolParamName: isHidden
 --- !u!1 &1817908894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,8 +5963,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1825059290}
   - component: {fileID: 1825059291}
+  - component: {fileID: 1825059292}
   m_Layer: 0
-  m_Name: body North girl
+  m_Name: Skylar
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5650,6 +6039,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1825059292
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825059289}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e337cf974a96604b82972c96ba0df02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1829708572 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
@@ -5734,6 +6143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1866537629}
   - component: {fileID: 1866537630}
+  - component: {fileID: 1866537631}
+  - component: {fileID: 1866537632}
   m_Layer: 0
   m_Name: Cloud North
   m_TagString: Untagged
@@ -5798,7 +6209,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 171016297, guid: 6ec4982b98af93041adbd6063fa06f2a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5808,6 +6219,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1866537631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866537628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a16f0100f493040962443703defd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHidden: 1
+  _animatorRef: {fileID: 1866537632}
+  _boolParamName: isHidden
+--- !u!95 &1866537632
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866537628}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a74536355d2df4438748615d26d735e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1914845466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,8 +6431,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1984101562}
   - component: {fileID: 1984101563}
+  - component: {fileID: 1984101564}
   m_Layer: 0
-  m_Name: Body NE boy
+  m_Name: Tegan
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6060,6 +6507,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1984101564
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984101561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e337cf974a96604b82972c96ba0df02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1992514162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6792,6 +7259,81 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2137465348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137465349}
+  - component: {fileID: 2137465350}
+  m_Layer: 0
+  m_Name: Dialogue Trigger E
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137465349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137465348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.09, y: -4.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1803959761}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2137465350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137465348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82df89a074258944da31781af2737b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeVector: {x: 5.22, y: 6.51}
+  _isTriggerActive: 1
+  _validTags:
+  - Player
+  OnTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646963447}
+        m_TargetAssemblyTypeName: SquareTrigger, Assembly-CSharp
+        m_MethodName: DeactivateTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1646963448}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: ForceInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2145039286
 GameObject:
   m_ObjectHideFlags: 0
