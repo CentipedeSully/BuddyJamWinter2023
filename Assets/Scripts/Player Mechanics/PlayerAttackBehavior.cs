@@ -88,4 +88,9 @@ public class PlayerAttackBehavior : MonoBehaviour
             }
         }
     }
+
+    public bool IsAttacking()
+    {
+        return _isAttacking;
+    }
 }

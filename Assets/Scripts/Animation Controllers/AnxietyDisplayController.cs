@@ -8,6 +8,7 @@ public class AnxietyDisplayController : MonoBehaviour
     [SerializeField] private List<Animator> _anxietyAnimators;
     [SerializeField] private Animator _animatorRef;
     [SerializeField] private string _boolParamName = "isVisible";
+    [SerializeField] private int _count = 0;
 
 
     //Monobehaviors
@@ -29,16 +30,16 @@ public class AnxietyDisplayController : MonoBehaviour
 
     public void IncreaseAnxiety()
     {
-        int count = 0;
         foreach (Animator animRef in _anxietyAnimators)
         {
-            count++;
             if (GetAnimState(animRef) == false)
             {
                 SetAnimState(animRef, true);
+                _count++;
                 break;
             }
-            if (count == 15)
+
+            if (_count == 15)
             {
                 //Stop Boss Encounter
                 //Show Defeat screen
@@ -53,9 +54,15 @@ public class AnxietyDisplayController : MonoBehaviour
             if (GetAnimState(_anxietyAnimators[i]) == true)
             {
                 SetAnimState(_anxietyAnimators[i], false);
+                _count--;
                 break;
             }
         }
+    }
+
+    public int GetCount()
+    {
+        return _count;
     }
 
 }
