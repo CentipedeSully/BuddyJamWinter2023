@@ -20,6 +20,8 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     [SerializeField] private bool _isAttackReady = true;
     [SerializeField] private float _attackCooldown = 1.5f;
     [SerializeField] private List<string> _validHitTargets;
+    [SerializeField] private float _castCooldown = 6f;
+    [SerializeField] private bool _isCastReady = true;
 
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private Transform _projectileContainer;
@@ -37,6 +39,7 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     private void Awake()
     {
         _moveRef = GetComponent<MoveObject>();
+        _guardPosition = transform.parent.gameObject;
     }
 
     private void Start()
@@ -51,7 +54,9 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     private void Update()
     {
-        TestAttack();
+        TargetPlayerWheninRange();
+        CastProjectileIfItCan();
+        AttackObjectsIfInRange();
         LookAtTarget();
         UpdateAttackingState();
         FleeFromTargetIfTooClose();
@@ -60,11 +65,16 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     //Interfaces
     public void TakeDamage(int value)
     {
+        _animController.TriggerHurtAnim();
+        _animController.InterruptAttackAnim();
         _anxietyDisplayRef.DecreaseAnxiety();
+        _attackCooldown -= .2f;
+        _castCooldown -= .2f;
         if (_anxietyDisplayRef.GetCount() == 0)
         {
             _isDead = true;
             _animController.TriggerDeathAnim();
+            transform.parent.GetComponent<SpawnController>().ReportEnemyDeath();
             Destroy(gameObject, _animController.GetAnimClipLength("death_anim"));
             OnDeath?.Invoke();
         }
@@ -77,6 +87,42 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     }
 
     //Utils
+    private void AttackObjectsIfInRange()
+    {
+        Collider2D[] detectedColliders = Physics2D.OverlapCircleAll(transform.position, _attackRadius);
+        foreach (Collider2D collider in detectedColliders)
+        {
+            if (_validHitTargets.Contains(collider.tag))
+            {
+                Attack();
+                break;
+            }
+        }
+    }
+
+    private void CastProjectileIfItCan()
+    {
+        if (_isAttackReady && !_isAttacking && _isCastReady && !_isDead)
+        {
+            SpawnProjectile();
+            _animController.PlayAttackAnim();
+            _isAttacking = true;
+            _isAttackReady = false;
+            Invoke("ReadyAttack", _attackCooldown);
+            Invoke("ReadyCast", _castCooldown);
+            _moveRef.SetMoveDirection(Vector3.zero);
+        }    
+    }
+
+    private void TargetPlayerWheninRange()
+    {
+        if (_target == null)
+        {
+            if (Vector2.Distance(PlayerObjectManager.Instance.GetCurrentPlayerObject().transform.position, transform.position) <= 11)
+                _target = PlayerObjectManager.Instance.GetCurrentPlayerObject();
+        }
+    }
+
     private void FleeFromTargetIfTooClose()
     {
         if (_target != null && _isAttacking == false && !_isDead)
@@ -116,16 +162,18 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     private void UpdateAttackingState()
     {
-        if (_isAttacking)
+        if (_isAttacking && !_isDead)
         {
             DamageTargetsInAttackRange();
 
             //Check if the attack state ended yet
             _isAttacking = _animController.GetAttackState();
-            
         }
     }
-
+    public void SetProjectileContainer(Transform container)
+    {
+        _projectileContainer = container;
+    }
 
     public bool IsAttacking()
     {
@@ -164,12 +212,28 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
         _isAttackReady = true;
     }
 
+    private void ReadyCast()
+    {
+        _isCastReady = true;
+    }
+
     private void SpawnProjectile()
     {
-        GameObject newProjectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity, _projectileContainer);
-        Vector3 directionTowardsTarget = (_target.transform.position - transform.position).normalized;
-        //Debug.Log(directionTowardsTarget);
-        newProjectile.GetComponent<MoveObject>().SetMoveDirection(directionTowardsTarget);
+        if (_target != null)
+        {
+            _animController.PlayAttackAnim();
+            GameObject newProjectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
+            newProjectile.transform.parent = transform.parent;
+            Vector3 directionTowardsTarget = (_target.transform.position - transform.position).normalized;
+            //Debug.Log(directionTowardsTarget);
+            newProjectile.GetComponent<MoveObject>().SetMoveDirection(directionTowardsTarget);
+        }
+
+    }
+
+    public void TargetPlayer()
+    {
+        _target = PlayerObjectManager.Instance.GetCurrentPlayerObject();
     }
 
     //Debugging

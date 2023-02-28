@@ -12,16 +12,7 @@ public class PlayerGUIHealthDisplayController : MonoBehaviour, IDisplayable
 
 
     //Monobehaviors
-    private void Awake()
-    {
-        if (_healthReference == null)
-            _healthReference = GetComponent<HealthBehavior>();
-    }
-
-    private void Start()
-    {
-        SetupGUIDisplay();
-    }
+    //...
 
     //Interface
     public void UpdateGUIDisplay()

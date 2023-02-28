@@ -53,7 +53,7 @@ public class DialogueDisplayController : MonoBehaviour
 
             while (isContinueInputPressed == false && isCancelInputPressed == false)
             {
-                isContinueInputPressed = Input.GetKeyDown(KeyCode.Return);
+                isContinueInputPressed = Input.GetKeyDown(KeyCode.Space);
                 isCancelInputPressed = Input.GetKeyDown(KeyCode.Backspace);
                 yield return null;
             }

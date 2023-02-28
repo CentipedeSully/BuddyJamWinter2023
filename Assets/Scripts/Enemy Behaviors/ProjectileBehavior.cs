@@ -42,7 +42,8 @@ public class ProjectileBehavior : MonoBehaviour , IDamagable
                 {
                     IDamagable targetDamageHandler = collision.GetComponent<IDamagable>();
                     if (targetDamageHandler != null)
-                        targetDamageHandler.TakeDamageAndKnockBack(1, transform);
+                        targetDamageHandler.TakeDamageAndKnockBack(0, transform);
+                    UiManager.Instance.GetAnxietyDisplayController().IncreaseAnxiety();
                 }
                 Destroy(gameObject);
             }

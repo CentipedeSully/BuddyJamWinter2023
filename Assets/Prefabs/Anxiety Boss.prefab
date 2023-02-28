@@ -192,7 +192,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.07
+  m_Radius: 3.37
 --- !u!114 &8245499639815822408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,16 +227,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guardPosition: {fileID: 0}
   _target: {fileID: 0}
-  _fleeRadius: 15
+  _fleeRadius: 13
   _animController: {fileID: 8245499639815822408}
-  _spriteRendererRef: {fileID: 0}
-  _attackRadius: 5
+  _spriteRendererRef: {fileID: 1175315904745917527}
+  _attackRadius: 7.22
   _isDead: 0
   _isAttacking: 0
   _isAttackReady: 1
-  _attackCooldown: 1.5
-  _validHitTargets: []
-  _projectilePrefab: {fileID: 0}
+  _attackCooldown: 3
+  _validHitTargets:
+  - Player
+  - PlayerProjectile
+  _castCooldown: 6
+  _isCastReady: 1
+  _projectilePrefab: {fileID: 2432046763544566798, guid: 30bf1fe7490918244bcf1629c2894559, type: 3}
   _projectileContainer: {fileID: 0}
   OnAttack:
     m_PersistentCalls:

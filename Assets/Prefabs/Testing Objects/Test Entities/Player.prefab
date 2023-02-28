@@ -180,7 +180,7 @@ MonoBehaviour:
   _isAttackReady: 1
   _isAttacking: 0
   _attackDuration: 0.5
-  _attackCooldown: 1
+  _attackCooldown: 0.5
   _validTargets:
   - Enemy
   OnAttackTriggered:

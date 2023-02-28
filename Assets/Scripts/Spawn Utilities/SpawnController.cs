@@ -47,7 +47,8 @@ public class SpawnController : MonoBehaviour
                 GameObject newEnemy = Instantiate(_enemyPrefabs[Random.Range(0, _enemyPrefabs.Count)], randomGuardPosition.position, Quaternion.identity, _enemyContainer);
                 _amountSpawned++;
 
-                newEnemy.GetComponent<HostileMeleeBehavior>().SetGuardPosition(randomGuardPosition);
+                if (newEnemy.GetComponent<HostileMeleeBehavior>() != null)
+                    newEnemy.GetComponent<HostileMeleeBehavior>().SetGuardPosition(randomGuardPosition);
             }
 
             else if (_enemiesDefeated == _amountToSpawn)
