@@ -15,7 +15,7 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     [SerializeField] private int _healthCurrent = 3;
     [SerializeField] private float _invulnerabilityDuration = .5f;
     [SerializeField] private bool _isInvulnerable = false;
- 
+
     [Header("Events")]
     public UnityEvent OnDamaged;
     public UnityEvent OnHealed;

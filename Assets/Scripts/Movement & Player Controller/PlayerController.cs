@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private MoveObject _moveObjectReference;
     private PlayerInteractionBehavior _interactBehaviorReference;
     private PlayerAttackBehavior _attackBehaviorRef;
+    private FMOD.Studio.EventInstance instance;
 
 
     //Monobehaviors

@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: OnTransitionStarted.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: OnTransitionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1472,6 +1472,7 @@ GameObject:
   - component: {fileID: 276853965}
   - component: {fileID: 276853964}
   - component: {fileID: 276853963}
+  - component: {fileID: 276853967}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -1643,6 +1644,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &276853967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276853961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1616135510
+      Data2: 1115923322
+      Data3: -840941413
+      Data4: 989568234
+    Path: event:/Level/Ambiences/Ambience_Rooms
+  Event: 
+  PlayEvent: 1
+  StopEvent: 5
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &286477484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1685,7 @@ GameObject:
   - component: {fileID: 286477485}
   - component: {fileID: 286477487}
   - component: {fileID: 286477486}
+  - component: {fileID: 286477488}
   m_Layer: 0
   m_Name: Win1
   m_TagString: Untagged
@@ -1719,6 +1751,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286477484}
   m_CullTransparentMesh: 1
+--- !u!114 &286477488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286477484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 316752111
+      Data2: 1305554958
+      Data3: 2018749855
+      Data4: 1533001711
+    Path: event:/Cutscene/Cutscene_HappyEmbraceSFX
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &292958743
 GameObject:
   m_ObjectHideFlags: 0

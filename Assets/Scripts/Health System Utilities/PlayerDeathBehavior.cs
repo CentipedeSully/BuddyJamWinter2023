@@ -6,6 +6,7 @@ public class PlayerDeathBehavior : DeathBehavior
 {
     //Declarations
     [SerializeField] private float _deathFadeoutDuration = 5;
+    private FMOD.Studio.EventInstance instance;
 
     //Monos
 
@@ -16,6 +17,10 @@ public class PlayerDeathBehavior : DeathBehavior
     {
         PlayerObjectManager.Instance.SpawnPlayer();
         Destroy(gameObject);
+        //End Death SFX Loop
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
+
     }
 
     public override void EnterDeathSequence()
@@ -26,6 +31,10 @@ public class PlayerDeathBehavior : DeathBehavior
 
         //Trigger player sleep anim
         GetComponent<PlayerAnimController>()?.TriggerDeathAnim();
+
+        //Start Death SFX Loop
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Player/Player_Death");
+        instance.start();
 
         //FadeTo Black
         UiManager.Instance.GetScreenFadeController().FadeToBlack(_deathFadeoutDuration);
