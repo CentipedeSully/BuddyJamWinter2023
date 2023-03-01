@@ -70,6 +70,10 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
         _anxietyDisplayRef.DecreaseAnxiety();
         _attackCooldown -= .2f;
         _castCooldown -= .2f;
+
+        //SFX
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/FinalBoss/FinalBoss_Pain");
+
         if (_anxietyDisplayRef.GetCount() == 0)
         {
             _isDead = true;
@@ -227,6 +231,9 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
             Vector3 directionTowardsTarget = (_target.transform.position - transform.position).normalized;
             //Debug.Log(directionTowardsTarget);
             newProjectile.GetComponent<MoveObject>().SetMoveDirection(directionTowardsTarget);
+
+            //SFX
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/FinalBoss/FinalBoss_Attack");
         }
 
     }
@@ -236,6 +243,10 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
         _target = PlayerObjectManager.Instance.GetCurrentPlayerObject();
     }
 
+    public void FinalBoss_Death()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/FinalBoss/FinalBoss_Death");
+    }
     //Debugging
     private void TestAnimator()
     {

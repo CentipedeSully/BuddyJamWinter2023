@@ -153,8 +153,8 @@ public class HostileMeleeBehavior : MonoBehaviour
         instance.release();
     }
 
-        //Getters and Setters
-        public bool IsAggroed()
+    //Getters and Setters
+    public bool IsAggroed()
     {
         return _isAggroed;
     }
