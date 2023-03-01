@@ -15,6 +15,7 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     [SerializeField] private float _attackRadius = 5;
 
+    [SerializeField] private bool _isInvulnerable = false;
     [SerializeField] private bool _isDead = false;
     [SerializeField] private bool _isAttacking = false;
     [SerializeField] private bool _isAttackReady = true;
@@ -55,8 +56,10 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     private void Update()
     {
         TargetPlayerWheninRange();
-        CastProjectileIfItCan();
-        AttackObjectsIfInRange();
+        if (_target != null)
+            CastProjectileIfItCan();
+        if (!_isDead)
+            AttackObjectsIfInRange();
         LookAtTarget();
         UpdateAttackingState();
         FleeFromTargetIfTooClose();
@@ -65,11 +68,8 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     //Interfaces
     public void TakeDamage(int value)
     {
-        _animController.TriggerHurtAnim();
-        _animController.InterruptAttackAnim();
         _anxietyDisplayRef.DecreaseAnxiety();
-        _attackCooldown -= .2f;
-        _castCooldown -= .2f;
+
         if (_anxietyDisplayRef.GetCount() == 0)
         {
             _isDead = true;
@@ -77,6 +77,17 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
             transform.parent.GetComponent<SpawnController>().ReportEnemyDeath();
             Destroy(gameObject, _animController.GetAnimClipLength("death_anim"));
             OnDeath?.Invoke();
+        }
+        else
+        {
+            if (_isAttacking)
+                _animController.InterruptAttackAnim();
+            _animController.TriggerHurtAnim();
+
+            _isInvulnerable = true;
+            Invoke("CooldownInvulnerability", .5f);
+            _attackCooldown -= .2f;
+            _castCooldown -= .2f;
         }
     }
 
@@ -87,6 +98,11 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
     }
 
     //Utils
+    private void CooldownInvulnerability()
+    {
+        _isInvulnerable = false;
+    }
+
     private void AttackObjectsIfInRange()
     {
         Collider2D[] detectedColliders = Physics2D.OverlapCircleAll(transform.position, _attackRadius);
@@ -140,7 +156,7 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     private void MoveToGuardPosition()
     {
-        if (_guardPosition != null)
+        if (_guardPosition != null && !_isDead)
         {
             Vector3 guardDirection = (_guardPosition.transform.position - transform.position).normalized;
             _moveRef.SetMoveDirection(guardDirection);
@@ -182,7 +198,7 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     private void Attack()
     {
-        if (_isAttacking==false && _isAttackReady && !_isDead)
+        if (_isAttacking==false && _isAttackReady && !_isDead && _target != null)
         {
             _animController.PlayAttackAnim();
             _isAttacking = true;
@@ -219,7 +235,7 @@ public class AnxietyBehavior : MonoBehaviour ,IDamagable
 
     private void SpawnProjectile()
     {
-        if (_target != null)
+        if (_target != null && !_isDead)
         {
             _animController.PlayAttackAnim();
             GameObject newProjectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
