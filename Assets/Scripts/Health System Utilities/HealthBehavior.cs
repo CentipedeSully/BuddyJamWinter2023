@@ -15,7 +15,7 @@ public class HealthBehavior : MonoBehaviour, IDamagable
     [SerializeField] private int _healthCurrent = 3;
     [SerializeField] private float _invulnerabilityDuration = .5f;
     [SerializeField] private bool _isInvulnerable = false;
- 
+
     [Header("Events")]
     public UnityEvent OnDamaged;
     public UnityEvent OnHealed;
@@ -158,6 +158,47 @@ public class HealthBehavior : MonoBehaviour, IDamagable
 
     }
 
+    //SFX
+    
+    public void Player_AttackHit()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Attack/Player_AttackHit");
+    }
+
+    public void Enemies_BlanketPain()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Blanket/Enemy_BlanketPain");
+    }
+
+    public void Enemies_BunPain()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Bun/Enemy_BunPain");
+    }
+
+    public void Enemies_TedbearPain()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_TedBear/Enemy_TedBearPain");
+    }
+
+    public void Enemies_BlanketDeath()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Blanket/Enemy_BlanketDeath");
+    }
+
+    public void Enemies_BunDeath()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_Bun/Enemy_BunDeath");
+    }
+
+    public void Enemies_TedBearDeath()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_TedBear/Enemy_TedBearDeath");
+    }
+
+    public void Player_Pain()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Pain");
+    }
 
     //Logs
     public void LogDamageTaken()
