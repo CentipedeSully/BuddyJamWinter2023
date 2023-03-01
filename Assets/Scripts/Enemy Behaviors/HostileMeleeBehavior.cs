@@ -13,6 +13,7 @@ public class HostileMeleeBehavior : MonoBehaviour
     [SerializeField] private string _validTargetTag = "Player";
     [SerializeField] private Transform _guardPosition;
     private MoveObject _moveReference;
+    private FMOD.Studio.EventInstance instance;
 
     [Header("Events")]
     public UnityEvent OnAggroEntered;
@@ -113,6 +114,19 @@ public class HostileMeleeBehavior : MonoBehaviour
         _isAggroed = false;
         _moveReference.SetMoveDirection(Vector3.zero);
         OnAggroExited?.Invoke();
+    }
+
+    //SFX
+    public void Enemies_BlanketIdleFootseps_Start()
+    {
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/LoopEvent");
+        instance.start();
+    }
+
+    public void Enemies_BlanketIdleFootsteps_Stop()
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
     }
 
     //Getters and Setters
