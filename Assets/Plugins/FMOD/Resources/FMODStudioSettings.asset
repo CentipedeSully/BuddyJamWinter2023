@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
-  sourceProjectPath: BuddyJamWinter2023-FMOD/BuddyJamWinter2023-FMOD.fspro
-  sourceBankPath: ../../FMOD Studio/BuddyJamWinter2023-FMOD/Build/Desktop
+  HasSourceProject: 1
+  HasPlatforms: 1
+  sourceProjectPath: ../../FMOD Studio/BuddyJamWinter2023-FMOD/BuddyJamWinter2023-FMOD.fspro
+  sourceBankPath: ../../FMOD Studio/BuddyJamWinter2023-FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
