@@ -295,19 +295,7 @@ MonoBehaviour:
   _guardPosition: {fileID: 0}
   OnAggroEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2821575228610229873}
-        m_TargetAssemblyTypeName: HostileMeleeBehavior, Assembly-CSharp
-        m_MethodName: Enemies_BunIdleFootseps_Start
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnAggroExited:
     m_PersistentCalls:
       m_Calls: []
