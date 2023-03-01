@@ -60,4 +60,10 @@ public class ScreenManager : MonoBehaviour
     {
         _creditsScreen.SetActive(false);
     }
+
+    public void UI_Selection()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Selection");
+    }
+
 }
