@@ -28,13 +28,23 @@ public class GameManager : MonoSingleton<GameManager>
         StartCoroutine(CloseGame());
     }
 
+    public void ResumeEndingGame()
+    {
+        StartCoroutine(FinishClosingGame());
+    }
+
     private IEnumerator CloseGame()
     {
         PlayerObjectManager.Instance.DisablePlayerControls();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         UiManager.Instance.GetScreenManager().ShowFoundBubblesScreen();
-        yield return new WaitForSeconds(3);
-        while(Input.GetKeyDown(KeyCode.Space) == false )
+        UiManager.Instance.GetDialogueControllerRef().ShowCloseDialogue(GetComponent<NPCDialogue>());
+        
+    }
+    
+    private IEnumerator FinishClosingGame()
+    {
+        while (Input.GetKeyDown(KeyCode.Space) == false)
         {
             yield return null;
         }
@@ -56,6 +66,5 @@ public class GameManager : MonoSingleton<GameManager>
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 
 }

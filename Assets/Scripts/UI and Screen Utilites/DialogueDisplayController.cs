@@ -70,10 +70,9 @@ public class DialogueDisplayController : MonoBehaviour
             count++;
         }
 
-        _isDialogueInProgress = false;
         if (adjustPlayerControls)
             PlayerObjectManager.Instance.EnablePlayerControls();
-
+        _isDialogueInProgress = false;
         originScript.OnAllDialogueExhausted?.Invoke();
     }
 
