@@ -295,10 +295,34 @@ MonoBehaviour:
   _guardPosition: {fileID: 0}
   OnAggroEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2821575228610229873}
+        m_TargetAssemblyTypeName: HostileMeleeBehavior, Assembly-CSharp
+        m_MethodName: Enemies_BlanketIdleFootseps_Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAggroExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2821575228610229873}
+        m_TargetAssemblyTypeName: HostileMeleeBehavior, Assembly-CSharp
+        m_MethodName: Enemies_BlanketIdleFootsteps_Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3296229562829590038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +401,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3296229562829590038}
         m_TargetAssemblyTypeName: HealthBehavior, Assembly-CSharp
         m_MethodName: Enemies_BlanketDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2821575228610229873}
+        m_TargetAssemblyTypeName: HostileMeleeBehavior, Assembly-CSharp
+        m_MethodName: Enemies_BlanketIdleFootsteps_Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

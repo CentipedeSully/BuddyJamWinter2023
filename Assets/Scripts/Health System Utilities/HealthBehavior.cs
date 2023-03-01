@@ -195,6 +195,10 @@ public class HealthBehavior : MonoBehaviour, IDamagable
         FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Enemy_TedBear/Enemy_TedBearDeath");
     }
 
+    public void Player_Pain()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Pain");
+    }
 
     //Logs
     public void LogDamageTaken()

@@ -119,7 +119,7 @@ public class HostileMeleeBehavior : MonoBehaviour
     //SFX
     public void Enemies_BlanketIdleFootseps_Start()
     {
-        instance = FMODUnity.RuntimeManager.CreateInstance("event:/LoopEvent");
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Enemy_Blanket/Enemy_BlanketIdleFootsteps");
         instance.start();
     }
 
@@ -129,8 +129,32 @@ public class HostileMeleeBehavior : MonoBehaviour
         instance.release();
     }
 
-    //Getters and Setters
-    public bool IsAggroed()
+    public void Enemies_BunIdleFootseps_Start()
+    {
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Enemy_Bun/Enemy_BunIdleFootsteps");
+        instance.start();
+    }
+
+    public void Enemies_BunIdleFootsteps_Stop()
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
+    }
+
+    public void Enemies_TedBearIdleFootseps_Start()
+    {
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Enemy_TedBear/Enemy_TedBearIdleFootsteps");
+        instance.start();
+    }
+
+    public void Enemies_TedBearIdleFootsteps_Stop()
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
+    }
+
+        //Getters and Setters
+        public bool IsAggroed()
     {
         return _isAggroed;
     }

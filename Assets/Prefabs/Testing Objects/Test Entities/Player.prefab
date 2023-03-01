@@ -186,16 +186,16 @@ MonoBehaviour:
   OnAttackTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: dc3065dc8db4e5945bef363f0328a639, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 3692308817015824224}
+        m_TargetAssemblyTypeName: PlayerAttackBehavior, Assembly-CSharp
+        m_MethodName: Player_SpinAttack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Player_SpinAttack
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7010537871985223851
@@ -247,7 +247,19 @@ MonoBehaviour:
   _isInvulnerable: 0
   OnDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5432934147361192984}
+        m_TargetAssemblyTypeName: HealthBehavior, Assembly-CSharp
+        m_MethodName: Player_Pain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealed:
     m_PersistentCalls:
       m_Calls: []
