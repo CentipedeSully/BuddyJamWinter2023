@@ -12,8 +12,6 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
     [SerializeField] private PlayerController _playerControllerRef;
     [SerializeField] private Transform _cameraFollowTransformOnRespawn;
     [SerializeField] private bool _isPlayerFollowObjectOnSpawn = false;
-    [SerializeField] private bool _hasRespawnDialogueBeenShownOnce = false;
-    [SerializeField] private List<string> _respawnDialogue;
 
     //Monobehaviors
 
@@ -43,12 +41,7 @@ public class PlayerObjectManager : MonoSingleton<PlayerObjectManager>
 
     public void ShowRespawnDialogue()
     {
-        if (!_hasRespawnDialogueBeenShownOnce)
-        {
-            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(_respawnDialogue, false);
-            _hasRespawnDialogueBeenShownOnce = true;
-        }
-        else EnablePlayerControls();
+         EnablePlayerControls();
     }
 
     public void DisablePlayerControls()

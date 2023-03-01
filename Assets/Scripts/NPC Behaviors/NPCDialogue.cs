@@ -11,13 +11,11 @@ public class NPCDialogue : MonoBehaviour, IInteractable
     [SerializeField] private bool _isDialogueSkippable = true;
     [SerializeField] private bool _isAllDialogueExhausted = false;
     [SerializeField] private int _currentDialogueIndex = 0;
-    [Space(20)]
-    [SerializeField] private List<ListWrapper> dialogues;
 
     //Events
     [Header("Events")]
+    public UnityEvent<NPCDialogue> OnDialogueTriggered;
     public UnityEvent OnAllDialogueExhausted;
-
 
     //monobehaviors
     
@@ -39,16 +37,9 @@ public class NPCDialogue : MonoBehaviour, IInteractable
 
     //Utilites
     private void StartDialogue()
-    { 
-            UiManager.Instance.GetDialogueControllerRef().EnterDialogue(dialogues[_currentDialogueIndex].list, _isDialogueSkippable);
-
-            if (_currentDialogueIndex < dialogues.Count - 1)
-                _currentDialogueIndex++;
-            else if (_isAllDialogueExhausted == false)
-            {
-                _isAllDialogueExhausted = true;
-                OnAllDialogueExhausted?.Invoke();
-            }
+    {
+        OnDialogueTriggered?.Invoke(this);
+        _currentDialogueIndex++;
     }
 
     //Getters and Setters
