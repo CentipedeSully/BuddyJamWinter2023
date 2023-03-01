@@ -59,6 +59,33 @@ public class PlayerController : MonoBehaviour
             _moveObjectReference.SetMoveDirection(_moveInput);
         else
             _moveObjectReference.SetMoveDirection(Vector2.zero);
+
+        if (_isControlsEnabled)
+        {
+            _moveObjectReference.SetMoveDirection(_moveInput);
+
+            // Start/stop the footstep loop based on whether the player is moving
+            if (_moveInput.magnitude > 0)
+            {
+                if (!instance.isValid())
+                {
+                    instance = FMODUnity.RuntimeManager.CreateInstance("event:/Player/Player_Footsteps");
+                    instance.start();
+                }
+            }
+            else
+            {
+                if (instance.isValid())
+                {
+                    instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    instance.release();
+                }
+            }
+        }
+        else
+        {
+            _moveObjectReference.SetMoveDirection(Vector2.zero);
+        }
     }
 
     private void InteractBasedOnInput()
