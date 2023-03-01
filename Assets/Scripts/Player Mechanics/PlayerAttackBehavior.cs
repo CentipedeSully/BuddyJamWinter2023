@@ -78,6 +78,7 @@ public class PlayerAttackBehavior : MonoBehaviour
         {
             DamageTargetsInAttackRange();
             _currentAttackDuration += Time.deltaTime;
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Attack/Player_SpinAttack");
 
             if (_currentAttackDuration >= _attackDuration)
             {
@@ -92,5 +93,10 @@ public class PlayerAttackBehavior : MonoBehaviour
     public bool IsAttacking()
     {
         return _isAttacking;
+    }
+
+    public void Player_SpinAttack()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Player_Attack/Player_SpinAttack");
     }
 }

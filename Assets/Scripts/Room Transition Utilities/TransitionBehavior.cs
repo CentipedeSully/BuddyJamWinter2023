@@ -33,6 +33,10 @@ public class TransitionBehavior : MonoBehaviour
     private IEnumerator TransitionObject(GameObject triggeringObject)
     {
         OnTransitionStarted?.Invoke();
+
+        //Play Transition SFX
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Level/Level_RoomTransition");
+
         PlayerObjectManager.Instance.DisablePlayerControls();
         UiManager.Instance.GetScreenFadeController().FadeToBlack((_transitionDuration / 2) - .05f);
         yield return new WaitForSeconds(_transitionDuration / 2);
