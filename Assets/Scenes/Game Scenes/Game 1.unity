@@ -702,6 +702,18 @@ PrefabInstance:
       propertyPath: _followPlayerOnTransition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
+      propertyPath: OnTransitionEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
+      propertyPath: OnTransitionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898019896597724012, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
+      propertyPath: OnTransitionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4826387440692463910, guid: 150f6f58f2d80e445b9ca3375cd07efa, type: 3}
       propertyPath: m_Color.a
       value: 0.19215687
@@ -7284,36 +7296,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1688401734265366524, guid: 0729ac067f4f16f42b8d017204fc9059, type: 3}
   m_PrefabInstance: {fileID: 2084965547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &874021181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874021179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -171429745
-      Data2: 1080289390
-      Data3: 695906956
-      Data4: 1629382786
-    Path: event:/Music/Music_Level
-  Event: 
-  PlayEvent: 1
-  StopEvent: 5
-  AllowFadeout: 1
-  TriggerOnce: 1
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &874021182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7321,7 +7303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874021179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -7400,6 +7382,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &874021186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874021179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972ec71b8ae5c4e44aa43127b3869e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToDeactivate: {fileID: 1552103166}
 --- !u!1 &879021558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11203,7 +11198,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068512672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
   m_Name: 
@@ -11212,6 +11207,66 @@ MonoBehaviour:
   Parameter: Music_Parameter
   TriggerEvent: 5
   Value: 1
+--- !u!114 &1377121798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068512672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1460535729
+      Data2: 1278171058
+      Data3: -1429266295
+      Data4: -917988220
+    Path: event:/Music/Music_Combat
+  Event: 
+  PlayEvent: 5
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1377121799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068512672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 47035692
+      Data2: 1105681533
+      Data3: 370020277
+      Data4: -163780524
+    Path: event:/Music/Music_SafeRoom
+  Event: 
+  PlayEvent: 1
+  StopEvent: 5
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1384192273
 GameObject:
   m_ObjectHideFlags: 0
@@ -13268,7 +13323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552103166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
   m_Name: 
@@ -13277,6 +13332,49 @@ MonoBehaviour:
   Parameter: Music_Parameter
   TriggerEvent: 5
   Value: 2
+--- !u!114 &1552103170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552103166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1814819616
+      Data2: 1314272285
+      Data3: -2099256684
+      Data4: -327129853
+    Path: event:/Music/Music_BossBattle
+  Event: 
+  PlayEvent: 5
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1552103173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552103166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972ec71b8ae5c4e44aa43127b3869e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToDeactivate: {fileID: 1068512672}
 --- !u!1 &1558067955
 GameObject:
   m_ObjectHideFlags: 0
@@ -19456,7 +19554,7 @@ GameObject:
   - component: {fileID: 5165798899474429216}
   m_Layer: 0
   m_Name: Player Object Manager
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

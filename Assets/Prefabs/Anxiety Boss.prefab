@@ -232,6 +232,7 @@ MonoBehaviour:
   _animController: {fileID: 8245499639815822408}
   _spriteRendererRef: {fileID: 1175315904745917527}
   _attackRadius: 7.22
+  _isInvulnerable: 0
   _isDead: 0
   _isAttacking: 0
   _isAttackReady: 1
